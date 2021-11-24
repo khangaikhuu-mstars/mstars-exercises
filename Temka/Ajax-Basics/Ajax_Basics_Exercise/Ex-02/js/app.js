@@ -8,7 +8,7 @@ let xhr  = new XMLHttpRequest()
 // Create callback function
 xhr.onreadystatechange = function (){
     if (xhr.readyState == 1 ){
-        console.log('thios is ready state 1')
+        console.log('this is ready state 1')
         document.getElementById("ajax").innerHTML += "<li>server connection establishe</li>" 
     }else if(xhr.readyState == 2){
         console.log('this is ready state 2')
