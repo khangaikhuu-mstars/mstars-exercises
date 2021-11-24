@@ -1,12 +1,18 @@
-let xhr = new XMLHttpRequest();
 
-xhr.onload = function() {
+var xhr = new XMLHttpRequest(),
+    method = "GET",
+    url = "/sidebar.html";
+
+xhr.open(method, url, true);
+
+xhr.onreadystatechange = function (){
+  if(xhr.readyState === 4 && xhr.status === 200) {
     console.log(xhr.responseText);
-    document.getElementById('ajax').innerHTML = xhr.responseText;
-    document.getElementById('load').style.display = 'none';
-}
-xhr.open("GET", "sidebar.html");
+    console.log('Request is ok');
+  }
+};
 
-function sendAJAX(){
-    xhr.send();
+
+function ajaxCheckReq(){
+  xhr.send();
 }
