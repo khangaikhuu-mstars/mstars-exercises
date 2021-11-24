@@ -1,15 +1,14 @@
-//1. Create new XMLHttpRequest
 var xhr = new XMLHttpRequest();
 
-//2. Create a call back function
-xhr.onload = function () {
+xhr.onreadystatechange = function() {
     console.log(xhr.status);
+    if( xhr.status = 200){
+        console.log('The Request is OK')
+    }
     console.log(xhr.responseText);
     document.getElementById('ajax').innerHTML = xhr.responseText;
 }
 
-//3. Open a request
-xhr.open('GET', 'partial.html');
+xhr.open('GET', 'sidebar.html');
 
-//4. Send a request
 xhr.send();
