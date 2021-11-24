@@ -335,3 +335,10 @@ p {
 .response p {
   margin: 0;
 }
+#ajax{
+  float: right;
+  margin-right: 50px;
+}
+h1{
+  margin-left: 50px;
+}
