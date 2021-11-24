@@ -1,0 +1,3 @@
+Elon Musk had some choice words for cryptocurrency exchange Binance on Twitter Tuesday, after the Tesla CEO raised concerns about the plight of fellow Dogecoin holders caught up in a technical glitch.
+
+An upgrade of the Dogecoin network on Nov. 10 appeared to have caused an issue with network withdrawals, Binance said in a statement the next day. A “very small number of users” were affected, they said, explaining that some previously failed Dogecoin withdrawal transactions got resent after the update, and “we are kindly requesting those users to return the assets.”
