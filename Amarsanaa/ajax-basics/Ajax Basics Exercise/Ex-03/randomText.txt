@@ -1,1 +1,1 @@
-this is random text on randomText.txt
+this is random text from randomText.txt
