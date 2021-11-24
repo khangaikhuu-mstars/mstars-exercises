@@ -6,6 +6,8 @@ function getJSON(url) {
     if(xhr.readyState === 4 && xhr.status === 200) {
       let data = JSON.parse(xhr.responseText);
       data.map(p => console.log(p));
+
+      document.querySelector("p").innerHTML = data;
     }
   };
   xhr.send();
