@@ -13,3 +13,4 @@ function getJSON(url) {
 
 getJSON('https://jsonplaceholder.typicode.com/photos');
 alert('Welcome to this page!');
+document.querySelector()
