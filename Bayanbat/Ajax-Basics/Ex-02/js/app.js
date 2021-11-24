@@ -1,10 +1,18 @@
-var xhr = new XMLHttpRequest();
 
+var xhr = new XMLHttpRequest();
+var ul = document.getElementById('list')
 xhr.onreadystatechange = function (){
-    console.log(xhr.status);
-    if (xhr.status = 200){
-        console.log(xhr.responseText);
-        document.getElementById("ajax").innerHTML = xhr.responseText
+    if (xhr.readyState == 1){
+        document.getElementById('ajax').innerHTML += `<li>server connection established</li>`
+    }
+    else if (xhr.readyState == 2){
+        document.getElementById('ajax').innerHTML += `<li>request received</li>`
+    }
+    else if (xhr.readyState == 3){
+        document.getElementById('ajax').innerHTML += `<li>processing request</li>`
+    }
+    else if (xhr.readyState == 4){
+        document.getElementById('ajax').innerHTML += `<li>request is finished and response is finished</li>`
     }
 }
 xhr.open('GET', 'sidebar.html');
