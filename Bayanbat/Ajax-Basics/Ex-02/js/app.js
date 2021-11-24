@@ -14,6 +14,7 @@ xhr.onreadystatechange = function (){
     else if (xhr.readyState == 4){
         document.getElementById('ajax').innerHTML += `<li>request is finished and response is finished</li>`
     }
+    console.log(xhr.readyState)
 }
 xhr.open('GET', 'sidebar.html');
 
