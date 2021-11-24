@@ -6,8 +6,8 @@ xhr.onreadystatechange = function () {
   console.log(xhr.status);
   if (xhr.status === 200) {
     console.log("The Request is ok");
+    document.getElementById("ajax").innerHTML = xhr.responseText;
   }
-  document.getElementById("ajax").innerHTML = xhr.responseText;
 };
 
 // 3. Open a request
