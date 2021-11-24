@@ -15,6 +15,15 @@ xhr2.onload = function (){
         document.getElementById("random").innerHTML = xhr2.responseText
     }
 }
+//Creating event listener
+document.getElementById("button1").addEventListener("click", () =>{
+    document.getElementById("ajax").style.display = "none"
+    document.getElementById("random").style.display = "none"
+})
+document.getElementById("button2").addEventListener("click", () =>{
+    document.getElementById("ajax").style.display = "flex"
+    document.getElementById("random").style.display = "flex"
+})
 
 //Creating get method 
 
