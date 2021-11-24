@@ -18,7 +18,7 @@ xhr.onreadystatechange = function() {
         ul.appendChild(li);
     }
     else if (xhr.readyState == 4) {
-        li.appendChild(document.createTextNode("request is finished and response is finished"));
+        li.appendChild(document.createTextNode("request is finished and response is ready"));
         ul.appendChild(li);
     }
 }
