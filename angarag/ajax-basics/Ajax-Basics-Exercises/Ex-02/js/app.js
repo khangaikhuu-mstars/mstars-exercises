@@ -5,7 +5,7 @@ var ul = document.getElementById("list")
 
 // Creating callback function
 xhr.onreadystatechange = function () {
-    xhr.readyState
+    console.log(xhr.readyState)
     if(xhr.readyState == 1){
         document.getElementById("ajax").innerHTML += `<li>Server connection established</li>`
     }else if(xhr.readyState == 2){
