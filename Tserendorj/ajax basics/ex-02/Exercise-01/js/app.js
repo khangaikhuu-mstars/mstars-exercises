@@ -14,6 +14,4 @@ xhr.onreadystatechange = function () {
 
 xhr.open('get', 'sidebar.html');
 xhr.send(); 
- var ul = document.getElementById('list');
- var li = document.getElementById('li');
-li.appendChild(document.createTextNode('four'));
+
