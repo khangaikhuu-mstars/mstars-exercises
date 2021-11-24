@@ -1,5 +1,5 @@
 // create new XMLHttpRequest
-var hxr = new XMLHttpRequest();
+var xhr = new XMLHttpRequest();
 
 // create call back function
 xhr.onload = function () {
