@@ -1,5 +1,5 @@
 //1. Create new XMLHttpRequest
-var xhr = ew XMLHttpRequest();
+var xhr = new XMLHttpRequest();
 
 //2. Create a call back function
 xhr.onload = function () {
