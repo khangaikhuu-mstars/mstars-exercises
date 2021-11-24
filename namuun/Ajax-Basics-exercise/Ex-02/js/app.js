@@ -1,15 +1,21 @@
 var xhr = new XMLHttpRequest();
+var msg = "";
 
 xhr.onreadystatechange = function(){
-    if(this.readyState == 1){
-        document.getElementById("ajax").innerHTML = '<li>Server Connection Established</li>'
-    } else if (this.readyState == 2){
-        document.getElementById("ajax").innerHTML = '<li>Request Recieved</li>'
-    } else if (this.readyState == 3){
-        document.getElementById("ajax").innerHTML = '<li>Processing Request</li>'
-    } else if (this.readyState == 4){
-        document.getElementById("ajax").innerHTML = '<li>Request is Finished and Response is Finished</li>'
+    var ul = document.getElementById("ajax"); 
+    var li = document.createElement("li");
+    if( xhr.readyState == 1){
+        msg = "Server Connection Established";
+    } else if ( xhr.readyState == 2){
+        msg = "Request Recieved"
+    } else if (xhr.readyState == 3){
+        msg = "Processing Request"
+    } else if (xhr.readyState == 4){
+        msg = "Request is Finished and Response is Finished"
     }
+    li.appendChild(document.createTextNode(msg)); 
+    ul.appendChild(li);
+
 }
 
 xhr.open('GET', 'sidebar.html');
