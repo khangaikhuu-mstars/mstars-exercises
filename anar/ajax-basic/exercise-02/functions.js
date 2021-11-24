@@ -1,13 +1,33 @@
 
 var xhr = new XMLHttpRequest(),
-    method = "GET",
-    url = "https://developer.mozilla.org/";
+method = "GET";
+url = "/sidebar.html";
+    
+xhr.open(method, url);
 
-xhr.open(method, url, true);
+const readyStateMessages = ['request not initialized', 'server connection established', 'request received', 'processing request', 'request is finished and response is finished'];
 
-xhr.onreadystatechange = function random() {
-  if(xhr.readyState === 4 && xhr.status === 200) {
-    console.log(xhr.responseText);
+xhr.onreadystatechange = function(){
+  for(let i = 0; i < 4; i++){
+    if(xhr.readyState === i) {
+      console.log(i);
+      console.log(readyStateMessages[i]);
+      console.log(readyStateMessages.length);
+    }
   }
 };
-xhr.send();
+    
+
+function ajaxCheckReq() {
+  xhr.send();
+}
+
+
+
+// var ul = document.getElementById("list"); 
+
+// var li = document.createElement("li");
+// li.appendChild(document.createTextNode("Four")); 
+// ul.appendChild(li);
+
+
