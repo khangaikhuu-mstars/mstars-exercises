@@ -18,7 +18,7 @@ function getTime() {
   return `${hh}:${mm}:${ss}`;
 }
 
-// tickClock();
+tickClock();
 
 function tickClock() {
   clockSection.textContent = getTime();

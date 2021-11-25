@@ -9,9 +9,10 @@ const hide = function(event) {
     event.target.className = '';
 };
 
+function addEvent(element){
+    element.addEventListener('focus', highlight);
+    element.addEventListener('blur', hide);    
+}
 
-nameInput.addEventListener('focus', highlight);
-nameInput.addEventListener('blur', hide);
-
-messageTextArea.addEventListener('focus', highlight);
-messageTextArea.addEventListener('blur', hide)
+addEvent(nameInput);
+addEvent(messageTextArea);
