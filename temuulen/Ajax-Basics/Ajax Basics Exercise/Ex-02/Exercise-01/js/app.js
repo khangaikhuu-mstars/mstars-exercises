@@ -1,6 +1,6 @@
 var xhr = new XMLHttpRequest();
-var ul = getElementById('ajax');
-var li = documnet.createElement('li');
+var ul = document.getElementById('ajax');
+var li = document.createElement('li');
 li.appendChild(document.createTextNode("Four"));
 ul.appendChild(li);
 
