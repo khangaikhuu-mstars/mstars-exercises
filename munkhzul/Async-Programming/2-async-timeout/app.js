@@ -9,3 +9,4 @@ function carryOn() {
 
 btn.addEventListener('click', carryOn);
 
+//setTimeout web browseriin uuriinh n funkts
