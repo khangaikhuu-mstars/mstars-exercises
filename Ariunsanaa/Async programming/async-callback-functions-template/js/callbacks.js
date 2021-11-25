@@ -3,16 +3,15 @@ const wikiUrl = 'https://en.wikipedia.org/api/rest_v1/page/summary/';
 const peopleList = document.getElementById('people');
 const btn = document.querySelector('button');
 
-
 // Make an AJAX request
-function getJSON(url , callback) {
+function getJSON(url, callback) {
   const xhr = new XMLHttpRequest();
   xhr.open('GET', url);
   xhr.onload = () => {
-    if (xhr.status === 200) {
+    if(xhr.status === 200) {
       let data = JSON.parse(xhr.responseText);
       console.log(data);
-      return callback(data)
+      return callback(data);
     }
   };
   xhr.send();
@@ -40,17 +39,21 @@ function generateHTML(data) {
   }
 }
 
-// getJSON(astrosUrl);
+getJSON(astrosUrl);
 
-btn.addEventListener("click", (event) => {
-  getJSON(astrosUrl , function (json){
-    const people = json.people
-    for(i = 1 ; i < people.length ; i++){
-      let astronaut = people[i]
-      getJSON(wikiUrl + astronaut.name , generateHTML)
+
+btn.addEventListener('click', ()=> {
+  getJSON(astrosUrl);
+  console.log(btn)
+  getJSON(astrosUrl, (JSON) => {
+    const people = JSON.people;
+    for(i=0; i<JSON.people.length; i++){
+      let astronaut = people[i];
+      getJSON(wikiUrl + astronaut.name, generateHTML)
     }
-    // btn.style.display = "none"
-    event.target.remove()
-  })
+  });
+  btn.style.display = "none";
 })
+
+
 
