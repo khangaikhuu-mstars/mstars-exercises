@@ -52,11 +52,14 @@ btn.addEventListener('click', () => {
           let astronaut = people[index];
 
       // console.log(people[index]);
-      
+
       getJSON(wikiUrl + astronaut.name, generateHTML)
     }
+    btn.style.display = "none"
   })
   });
+
+
 
 // getJSON(astrosUrl)
 
