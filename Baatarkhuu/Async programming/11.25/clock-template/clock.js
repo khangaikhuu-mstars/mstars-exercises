@@ -23,15 +23,9 @@ function tickClock() {
 }
 
 
+// // 1.
 // tickClock();
-
-// setInterval(tickClock, 1000)
-
-// // setInterval(function(){
-//   tickClock()
-// // }, 1000)
-
-// setInterval(()=>{
-//   tickClock()
-// },1000)
-
+// setInterval(tickClock, 1000);
+// 2.
+tickClock();
+setInterval(()=>{clockSection.textContent = getTime();}, 1000)
