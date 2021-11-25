@@ -14,10 +14,13 @@ function makeBlue(element) {
 function addStyleToElement(element, callback) {
     callback(element);
 }
+// TASK-1
+addStyleToElement(div1 , makeRed)
+// TASK-2
+addStyleToElement(div2 , makeBlue)
+// TASK-3
 function makeGreen(element) {
-    element.style.backgroundColor = "Green";
+    element.style.backgroundColor = "green";
 }
-
-addStyleToElement(div1, makeRed)
-addStyleToElement(div2, makeBlue)
-addStyleToElement(div3, makeGreen)
+// TASK-4
+addStyleToElement(div3 , makeGreen)
