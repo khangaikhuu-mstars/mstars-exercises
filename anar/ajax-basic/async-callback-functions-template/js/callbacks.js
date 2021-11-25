@@ -49,5 +49,6 @@ btn.addEventListener('click', () => {
       let astronaut = json.people[i];
       getJSON(wikiUrl + astronaut.name, generateHTML)
     }
+    btn.style.display = "none";
   });
 });
