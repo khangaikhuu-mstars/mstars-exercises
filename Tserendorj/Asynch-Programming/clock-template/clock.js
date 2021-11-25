@@ -27,9 +27,11 @@ function tickClock() {
 
 // setInterval(tickClock, 1000)
 
-// setInterval(function(){
-// }, 1000)
+// // setInterval(function(){
+//   tickClock()
+// // }, 1000)
 
-setInterval(()=>{
-  tickClock()
-},1000)
+// setInterval(()=>{
+//   tickClock()
+// },1000)
+
