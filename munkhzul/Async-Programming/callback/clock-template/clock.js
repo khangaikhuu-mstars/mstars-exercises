@@ -22,16 +22,14 @@ function tickClock() {
   clockSection.textContent = getTime();
 }
 
+// setInterval(tickClock, 1000);
 
-// tickClock();
+let anonym = function () {
+  tickClock();
+}
+setInterval(anonym, 1000);
 
-// setInterval(tickClock, 1000)
-
-// // setInterval(function(){
-//   tickClock()
-// // }, 1000)
-
-// setInterval(()=>{
-//   tickClock()
-// },1000)
+setInterval(() => {
+  tickClock();
+}, 1000);
 

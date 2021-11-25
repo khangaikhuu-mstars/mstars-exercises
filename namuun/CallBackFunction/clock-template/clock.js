@@ -23,15 +23,13 @@ function tickClock() {
 }
 
 
-// tickClock();
+// Task0
+setInterval(tickClock, 1000)
 
-// setInterval(tickClock, 1000)
-
-// // setInterval(function(){
+// Task1
+// setInterval(function(){
 //   tickClock()
-// // }, 1000)
+// }, 0);
 
-// setInterval(()=>{
-//   tickClock()
-// },1000)
+
 

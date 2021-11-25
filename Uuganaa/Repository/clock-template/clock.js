@@ -22,16 +22,10 @@ function tickClock() {
   clockSection.textContent = getTime();
 }
 
+// Calling anonymous function
+setInterval(tickClock(), 1000)
 
-// tickClock();
-
-// setInterval(tickClock, 1000)
-
-// // setInterval(function(){
-//   tickClock()
-// // }, 1000)
-
-// setInterval(()=>{
-//   tickClock()
-// },1000)
-
+// calling arrow function
+setInterval(() => {
+  clockSection.textContent = getTime();
+}, 1000);
