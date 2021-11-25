@@ -3,10 +3,12 @@ const messageTextArea = document.getElementById('message');
 
 // ex-1
 nameInput.addEventListener("focus",function(event){
+    console.log(event.target)
     event.target.className = "highlight"
 })
 // ex-2
 messageTextArea.addEventListener("focus",function(event){
+    console.log(event.target)
     event.target.className = "highlight"
 })
 // ex-3

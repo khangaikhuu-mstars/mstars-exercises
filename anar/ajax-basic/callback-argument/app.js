@@ -19,6 +19,9 @@ function addStyleToElement(element, callback) {
     callback(element);
 }
 
+function assignColor(color) {
+    element.style.backgroundColor = color;
+}
 
 addStyleToElement(div1, makeRed);
 addStyleToElement(div2, makeBlue);
