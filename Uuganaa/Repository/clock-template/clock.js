@@ -18,11 +18,14 @@ function getTime() {
   return `${hh}:${mm}:${ss}`;
 }
 
-tickClock();
-
 function tickClock() {
   clockSection.textContent = getTime();
-  setInterval(tickClock, 1000);
 }
 
+// Calling anonymous function
+setInterval(tickClock(), 1000)
 
+// calling arrow function
+setInterval(() => {
+  clockSection.textContent = getTime();
+}, 1000);
