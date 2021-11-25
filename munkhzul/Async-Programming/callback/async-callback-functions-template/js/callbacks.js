@@ -38,7 +38,7 @@ function generateHTML(data) {
   }
 }
 
-btn.addEventListener('click', () => {
+btn.addEventListener('click', (event) => {
   getJSON(astrosUrl, function (json) {
     let people = json.people;
     for (i = 0; i < people.length; i++){
@@ -47,4 +47,5 @@ btn.addEventListener('click', () => {
     }
     btn.style.display = "none";
   });
+  event.target.remove();
 })
