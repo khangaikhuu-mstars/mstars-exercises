@@ -22,6 +22,8 @@ function tickClock() {
   clockSection.textContent = getTime();
 }
 
-tickClock();
-// use anonymous function
-setInterval(tickClock, 1000)
+setInterval(() => {
+  clockSection.textContent = getTime();
+}, 1000);
+
+

@@ -42,14 +42,15 @@ function generateHTML(data) {
 
 // getJSON(astrosUrl);
 
-btn.addEventListener("click", () => {
+btn.addEventListener("click", (event) => {
   getJSON(astrosUrl , function (json){
     const people = json.people
     for(i = 1 ; i < people.length ; i++){
       let astronaut = people[i]
       getJSON(wikiUrl + astronaut.name , generateHTML)
     }
-    btn.style.display = "none"
+    // btn.style.display = "none"
+    event.target.remove()
   })
 })
 

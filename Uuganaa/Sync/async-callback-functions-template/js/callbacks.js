@@ -3,16 +3,16 @@ const wikiUrl = 'https://en.wikipedia.org/api/rest_v1/page/summary/';
 const peopleList = document.getElementById('people');
 const btn = document.querySelector('button');
 
-
 // Make an AJAX request
 function getJSON(url, callback) {
   const xhr = new XMLHttpRequest();
   xhr.open('GET', url);
   xhr.onload = () => {
-    if(xhr.status === 200) {
+    if (xhr.status === 200) {
       let data = JSON.parse(xhr.responseText);
-      // console.log(data);
-      return callback(data);
+      console.log(data);
+      return callback(data)
+
     }
   };
   xhr.send();
@@ -40,16 +40,32 @@ function generateHTML(data) {
   }
 }
 
-// getJSON(astrosUrl);
-
-btn.addEventListener('click', (event) => {
+btn.addEventListener("click", (eve) =>
   getJSON(astrosUrl, (json) => {
-    for(let i = 0; i < json.people.length; i++){
-      console.log(json.astronaut);
-      let astronaut = json.people[i];
-      getJSON(wikiUrl + astronaut.name, generateHTML)
+    const people = json.people;
+    for (i = 0; i < people.length; i++) {
+      let astronaut = people[i];
+      getJSON(wikiUrl + astronaut.name, generateHTML);
     }
-    // btn.style.display = "none";
-    event.target.remove();
-  });
-});
+
+    // btn.style.display = "none"
+    eve.target.remove();
+  })
+)
+
+
+// btn.addEventListener("click", function () {
+//   getJSON(astrosUrl)
+// })
+
+
+
+
+
+// btn.addEventListener("click", function (json) {
+//   getJSON(astrosUrl, function (json) {
+//     for (i = 1; i < 10; i++) {
+//       console.log(json.people[i]);
+//     }
+//   });
+// })
