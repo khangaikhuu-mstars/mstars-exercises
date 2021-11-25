@@ -7,5 +7,5 @@ function wait() {
  console.log('finished!');
 }
 
-btn.addEventListener('click', wait);
+// btn.addEventListener('click', wait);
 
