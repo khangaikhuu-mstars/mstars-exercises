@@ -16,9 +16,9 @@ let randomDelay = Math.floor(Math.random() * 4000);
 
 //  Random delayed anonymus function
 
-const x = function () {
+const x = function() {
     setTimeout(() => {
-        surpriseSection.textContent = '🎉 Surprise! 🎉',
+        showSurprise,
         randomDelay
     });    
 }
