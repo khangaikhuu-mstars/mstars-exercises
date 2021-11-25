@@ -1,28 +1,19 @@
-
-
-
-
-
 const surpriseSection = document.getElementById('surprise');
 
-function showSurprise() {
-    surpriseSection.textContent = '🎉 Surprise! 🎉';
-}
+// function showSurprise() {
+//     surpriseSection.textContent = '🎉 Surprise! 🎉';
+// }
+// setTimeout(showSurprise, 1000)
 
-//setTimeout(showSurprise, 2000);
 
-var timer  = Math.random() * 4000
-
-// setTimeout(showSurprise,timer)
-
+var timer = Math.random()*4000
+// setTimeout(showSurprise, timer)
 
 // setTimeout(function(){
 //     surpriseSection.textContent = '🎉 Surprise! 🎉';
-// } , timer)
-
+// }, timer)
 
 setTimeout(()=>{
     surpriseSection.textContent = '🎉 Surprise! 🎉';
-},timer)
-
+}, timer)
 
