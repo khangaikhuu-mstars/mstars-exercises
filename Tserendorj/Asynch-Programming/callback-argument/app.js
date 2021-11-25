@@ -10,17 +10,14 @@ function makeRed(element) {
 function makeBlue(element) {
     element.style.backgroundColor = "blue";
 }
-function makeGreen(element){
-    element.style.backgroundColor = "green"
-}
-
 
 function addStyleToElement(element, callback) {
     callback(element);
 }
-
-
-
 addStyleToElement(div1, makeRed);
 addStyleToElement(div2, makeBlue);
+
+function makeGreen(element){
+    element.style.backgroundColor = "green"
+}
 addStyleToElement(div3, makeGreen);
