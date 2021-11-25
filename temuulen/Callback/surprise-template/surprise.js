@@ -8,6 +8,10 @@ function showSurprise() {
 
 // setTimeout(showSurprise, timer);
 
-setTimeout(function() {
+// setTimeout(function() {
+//     surpriseSection.textContent = '🎉 Surprise! 🎉';
+// }, timer)
+
+setTimeout(() =>  {
     surpriseSection.textContent = '🎉 Surprise! 🎉';
-}, 2000)
+} ,timer)
