@@ -11,6 +11,7 @@ let delay = Math.floor(Math.random() * 4000); //random second
 //Using Arrow Function
 /*setTimeout(() => {
     surpriseSection.textContent = '🎉 Surprise! 🎉';
+    showSurprise();
 }, delay)
 */
 
