@@ -14,3 +14,9 @@ function makeBlue(element) {
 function addStyleToElement(element, callback) {
     callback(element);
 }
+
+//make red 
+addStyleToElement(div1, makeRed);
+
+//make blue
+addStyleToElement(div2, makeBlue);
