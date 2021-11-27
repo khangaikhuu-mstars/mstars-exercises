@@ -2,7 +2,7 @@ let xhr1 = new XMLHttpRequest;
 let xhr2 = new XMLHttpRequest;
 xhr1.onreadystatechange = function(){
     if(xhr1.status === 200){
-      document.getElementById('ajax').innerHTML += xhr1.responseText
+      document.getElementById('ajax').innerHTML += xhr1.responseText;
   }
 }
 xhr2.onload = function(){

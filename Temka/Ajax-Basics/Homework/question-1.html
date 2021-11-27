@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="question-1.css">
+</head>
+<body>
+
+    <form action="">
+            <input type="button" name="" id="" value="button">
+    </form>
+    
+  
+    <script>
+
+        token  = "d045ddff269a5b8752ac73a10222b20aed40b50311afd78bd4e03f8043fed857"
+        const url  = "https://gorest.co.in/public/v1/users"
+
+        let xhr2 = new XMLHttpRequest();
+
+        xhr2.open("POST", url)        
+
+        xhr2.setRequestHeader("Accept", "application/json")
+        xhr2.setRequestHeader("Content-Type", "application/json")
+        xhr2.setRequestHeader("Authorization", `Bearer ${token}`)
+
+
+        xhr2.onreadystatechange = function(){
+            console.log(xhr2.status)
+            if(xhr2.status === 201){
+
+                console.log(xhr2.responseText)
+                console.log(xhr2.readyStates)
+            }
+        }
+
+        let data = `{"name": "James Bond",
+                "gender": "male",
+                "email": "James@gmail.com",
+                "status": "active",
+                "message": "hello world message"    
+            }`;
+
+        
+
+      xhr2.send(data)
+
+    
+
+    </script>
+</body>
+</html>

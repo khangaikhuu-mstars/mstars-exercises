@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="question-1.css">
+</head>
+<body>
+
+    <form action="">
+            <input type="button" name="" id="Q2" value="Get users list">
+    </form>
+
+    <div id = "users">
+
+    </div>
+    
+  
+    <script>
+
+        token  = "d045ddff269a5b8752ac73a10222b20aed40b50311afd78bd4e03f8043fed857"
+        const url  = "https://gorest.co.in/public/v1/users"
+        btn = document.getElementById("Q2")
+        users = document.getElementById("users")
+
+        
+        function getUsers(url, callback){
+            let xhr  = new XMLHttpRequest()
+            xhr.open("GET", url)
+            let data
+            xhr.onload = function(){
+                if(xhr.status === 200){
+                    data =  JSON.parse(xhr.responseText).data
+                    console.log(data)
+                    return callback(data)
+                }
+            }
+            xhr.send()
+        }
+
+
+        function print(a){
+            console.log("Print function")
+            console.log(a[0])
+            users.innerHTML = `${a[0].email}`
+        }
+
+        getUsers(url, print)
+
+    
+        
+
+        
+        // btn.addEventListener("click", getUsers(url))
+
+    
+
+    </script>
+</body>
+</html>
