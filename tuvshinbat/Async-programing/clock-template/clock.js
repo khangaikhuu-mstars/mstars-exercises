@@ -4,8 +4,10 @@ function getTime() {
   function pad(number) {
     if (number < 10) {
       return "0" + number;
-    } else {
+    }
+     else {
       return number;
+      
     }
   }
 
@@ -16,6 +18,7 @@ function getTime() {
   const ss = pad(now.getSeconds());
 
   return `${hh}:${mm}:${ss}`;
+  
 }
 
 function tickClock() {
@@ -25,5 +28,3 @@ function tickClock() {
 setInterval(() => {
   clockSection.textContent = getTime();
 }, 1000);
-
-

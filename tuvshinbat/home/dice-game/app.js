@@ -74,7 +74,7 @@ document.getElementById("score-" + activePlayer).textContent= scores[activePlaye
 
 
 // toglogch 100 onoo hurhed hojih tul hojson esehiig shal
-if(scores[activePlayer] >= 100){
+if(scores[activePlayer] >= 30){
     document.getElementById("name-"+ activePlayer).textContent = "Winner !!!";
     document.querySelector(".player-"+ activePlayer + "-panel")
     .classList.add("winner")
@@ -97,7 +97,34 @@ function switchToNextPlayer(){
     document.querySelector(".player-1-panel").classList.toggle("active");
     // onoo 1 bolood shiljih uyd shoog tahiad tur alga bolgoy
     document.querySelector(".dice").style.display = "none";
+   
+       
+    
+
 };
+document.querySelector(".btn-new").addEventListener("click",initGame)
+function initGame(){ 
+    scores = [0, 0];
+    roundScore = 0;
+    activePlayer = 0;
+
+    document.getElementById("score-0").textContent = 0;
+    document.getElementById("score-1").innerHTML = 0;
+    document.querySelector('.dice').style.display ="none";
+    document.getElementById("current-0").textContent = 0;
+    document.getElementById("current-1").textContent = 0;
+
+    document.getElementById("name-0").textContent = "player-1"
+    document.getElementById("name-1").textContent = "player-1"
+    document.querySelector(".player-0-panel").classList.remove("winner")
+    document.querySelector(".player-1-panel").classList.remove("winner")
+    document.querySelector(".player-0-panel").classList.remove("active")
+    document.querySelector(".player-1-panel").classList.remove("active")
+
+    document.querySelector(".player-0-panel").classList.add("active")
+
+}
+
 
 
 

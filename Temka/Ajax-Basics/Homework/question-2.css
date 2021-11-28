@@ -1,0 +1,44 @@
+
+
+body{
+    
+}
+
+
+form {
+    margin: 50px auto;
+    text-align: center;
+}
+
+input{
+    height: 50px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    font-style: 'roboto';
+    background-color: rgba(214, 214, 214, 0.445);
+}
+
+input:focus{
+        box-shadow: inset 0px 0px 2px 2px gray;
+     
+}
+
+#users{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+ul{
+    min-width: 30%;
+    background-color: rgba(128, 128, 128, 0.37);
+    border-radius: 20px;
+    padding-bottom: 20px;
+    list-style: none;
+}
+
+li{
+    color: rgba(0, 0, 0, 0.829)
+}
