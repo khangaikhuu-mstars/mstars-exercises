@@ -8,10 +8,10 @@
 </head>
 <body>
 
-    <form action="Q5">
-        <input type="button" name="" id="" value = "button">
+    <form action="">
+        <input type="button" name="" id="Q5" value = "Create user">
     </form>
-    <div>
+    <div id ="user" >
         
     </div>
     
@@ -19,8 +19,26 @@
   <script>
     let userUrl = " https://gorest.co.in/public/v1/users"
     let token = "291291423cd0707653a12dee6e49a08098d84b1a80c35504c8813b33edb788b5"
+    let users = document.getElementById("user")
     
     var personID = ""
+
+    function generateHTML(person){
+            
+                const unorderedList  = document.createElement('ul')
+          
+                unorderedList.innerHTML = `
+                <li><h2>${person.name}</h2></li>
+                <li>ID: ${person.id}</li>
+                <li>Gender: ${person.gender}</li>
+                <li>Email: ${person.email}</li>
+                <li>Status: ${person.status}</li>
+                `
+                users.appendChild(unorderedList)
+        
+          
+        }
+
     function createUser(callback){
         let xhr2 = new XMLHttpRequest();
 
@@ -33,17 +51,18 @@
         xhr2.setRequestHeader("Authorization", `Bearer ${token}`)
 
         xhr2.onreadystatechange = function(){
-            console.log(xhr2.status)
-            console.log(xhr2.responseText)
-            if(xhr2.status === 201){  
-                let id = JSON.parse(xhr2.responseText).data.id
-                return callback(id)
+            if(xhr2.status === 201 && xhr2.readyState === 4){  
+                let data = JSON.parse(xhr2.responseText).data
+                console.log(data)
+                generateHTML(data)
+                return callback(data.id)
+
             }
         }
         // Person will be created
         let data = `{"name": "James Bond",
                 "gender": "male",
-                "email": "blabla3@gmail.com",
+                "email": "blabla12@gmail.com",
                 "status": "active"
             }`;
 
@@ -52,12 +71,32 @@
         xhr2.send(data)
     }
 
-    function saveID(id){
+    function generatePost(id){
         personID = id;
         console.log("person id:" + personID)
+
+        let xhr = new XMLHttpRequest()
+        xhr.open("POST", userUrl + "/" + id + "/posts")
+
+        xhr.setRequestHeader("Accept", "application/json")
+        xhr.setRequestHeader("Content-Type", "application/json")
+        xhr.setRequestHeader("Authorization", `Bearer ${token}`)
+
+        xhr.onreadystatechange = function(){
+            console.log(xhr.responseText)
+            if(xhr.status === 201 && xhr.readyState === 4){
+                console.log(xhr.responseText)
+            }
+        }
+
+        data = `{
+            "title":"Title James dfad",
+            "body" : "bodfkjdklffdfa j Bodyy bodyy"
+        }`
+        xhr.send(data)
     }
 
-    createUser(saveID)
+    createUser(generatePost)
 
   </script>  
 </body>
