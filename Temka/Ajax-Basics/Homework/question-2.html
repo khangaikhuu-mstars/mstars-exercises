@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="question-1.css">
+    <link rel="stylesheet" href="question-2.css">
 </head>
 <body>
 
@@ -14,7 +14,8 @@
     </form>
 
     <div id = "users">
-
+        
+   
     </div>
     
   
@@ -41,19 +42,29 @@
         }
 
 
-        function print(a){
-            console.log("Print function")
-            console.log(a[0])
-            users.innerHTML = `${a[0].email}`
+        function generateHTML(listPerson){
+            listPerson.map(person =>{
+                const unorderedList  = document.createElement('ul')
+                
+                unorderedList.innerHTML = `
+                <li><h2>${person.name}</h2></li>
+                <li>ID: ${person.id}</li>
+                <li>Gender: ${person.gender}</li>
+                <li>Email: ${person.email}</li>
+                <li>Status: ${person.status}</li>
+                `
+                users.appendChild(unorderedList)
+            })
+          
         }
-
-        getUsers(url, print)
 
     
         
-
+    btn.addEventListener("click", (event)=>{
+         getUsers(url, generateHTML)
+         event.target.remove()
         
-        // btn.addEventListener("click", getUsers(url))
+    })
 
     
 

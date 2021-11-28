@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="question-3.css">
+</head>
+<body>
+    <form action="">
+        <input type="button" name="" id="Q3" value="Get posts">
+    </form>
+    
+    <div id = "posts">
+
+    </div>
+
+
+    <script>
+
+        const token  = "d045ddff269a5b8752ac73a10222b20aed40b50311afd78bd4e03f8043fed857"
+        const url  = "https://gorest.co.in/public/v1/posts"
+        const posts = document.getElementById("posts")
+        btn = document.getElementById("Q3")
+
+
+        //retreive posts
+        function getPosts(url, callback){
+            let xhr = new XMLHttpRequest()
+            xhr.open("GET", url)
+            xhr.onload = ()=>{
+                console.log(xhr.status)
+                let data = JSON.parse(xhr.responseText).data
+                console.log(data)
+                return callback(data)
+            }
+
+            xhr.send()
+            
+        }
+
+
+        function generateHTML(postList){
+            postList.map(post =>{
+                let sectionPost = document.createElement("section")
+
+                sectionPost.innerHTML = `
+                <h2>${post.title}</h2>
+                <p class= "body"> ${post.body}<p>
+                <p class = "userid">post id: ${post.id} UserID: ${post.user_id}</p>
+                `   
+                posts.appendChild(sectionPost)             
+            })
+        }
+
+        btn.addEventListener("click", (event)=>{
+            getPosts(url, generateHTML)
+            event.target.remove()
+
+        })
+       
+
+    </script>
+
+
+</body>
+</html>
