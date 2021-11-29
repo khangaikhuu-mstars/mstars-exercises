@@ -57,11 +57,10 @@ function generateHTML(data) {
 
 btn.addEventListener('click', (event) => { 
   console.log('button clicked')
-  const astronauts = getJSON(astrosUrl)
-    .then(data => {
-      const profiles = getProfiles(data);
-      profiles.map(profile => {
-        profile.then(data => generateHTML(data));
+      getJSON(astrosUrl).then(data => {
+          const profiles = getProfiles(data);
+          profiles.map(profile => {
+            profile.then(data => generateHTML(data));
       });
   });
   event.target.remove();
