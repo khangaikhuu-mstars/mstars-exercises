@@ -18,8 +18,37 @@ function requestJson(){
     console.log(myPromise);
     myPromise
         .then((response) => {
-            console.log(response);
-            ul.innerHTML += JSON.parse(response).data;
+            
+            let file = JSON.parse(response);
+            console.log(file);
+            let fileLen = file.data.length;
+
+            var body = document.getElementsByTagName("body")[0];
+            var tbl = document.createElement("table");
+            var tblBody = document.createElement("tbody");
+
+            for (var i = 0; i < fileLen; i++) {
+                var row = document.createElement("tr");
+
+                let parsedName = file.data[i].name;
+                let parsedEmail = file.data[i].email;   
+                let parsedGender = file.data[i].gender;   
+                let parsedStatus = file.data[i].status;   
+
+                let tmp = [parsedName, parsedEmail, parsedGender, parsedStatus];
+                
+                for (var j = 0; j < 4; j++) {
+                    var cell = document.createElement("td");
+                    var cellText = document.createTextNode(tmp[j]);
+                    cell.appendChild(cellText);
+                    row.appendChild(cell);
+                }
+                tblBody.appendChild(row);
+            }
+
+            tbl.appendChild(tblBody);
+            body.appendChild(tbl);
+            tbl.setAttribute("border", "2");
         })
         .catch((error) => {
             console.log(error)
@@ -30,9 +59,6 @@ function requestJson(){
         });
 }
 
-
-
-
 function addJson() {
-    console.log(requestJson());
+    requestJson();
 }
