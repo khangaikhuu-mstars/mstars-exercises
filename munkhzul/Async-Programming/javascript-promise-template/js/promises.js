@@ -4,27 +4,27 @@ const peopleList = document.getElementById('people');
 const btn = document.querySelector('button');
 
 function getJSON(url) {
-  const promise = new Promise((resolve, reject) => {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', url);
-    xhr.onload = () => {
-      if (xhr.status === 200) {
-        let data = JSON.parse(xhr.responseText);
-        return resolve(data);
-      } else {
-        return reject(data);
-      };
-    };
+
+const promise = new Promise(function(resolve, reject){
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', url);
+  xhr.onload = () => {
+    if(xhr.status === 200) {
+      let data = JSON.parse(xhr.responseText);
+      return resolve(data);
+    } else {
+      return reject(data);
+    }
+  };
     xhr.send();
-  });
-  return promise;
-};
+});
+return promise;
+}
 
 function getProfiles(json) {
-  const profiles = json.people.map(person => {
-    return getJSON(wikiUrl + person.name);
-
-  });
+  const profiles = json.people.map( person => {
+    return getJSON(wikiUrl + person.name);      
+  }); 
   return profiles;
 }
 
@@ -55,11 +55,10 @@ btn.addEventListener('click', (event) => {
     const profiles = getProfiles(data);
     // for (i = 0; i < profiles.length; i++) {
     //   profiles[i].then(data => generateHTML(data));
-
-    // };
-    profiles.map(profiles => {
-      profiles.then(data => generateHTML(data))
+    // }
+    profiles.map(profile => {
+      profile.then(data => generateHTML(data));
     })
-    btn.style.display = "none"
-  });
+  })
+  event.target.remove();
 });
