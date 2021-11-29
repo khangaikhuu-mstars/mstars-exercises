@@ -10,11 +10,16 @@ function getJSON(url, callback) {
   xhr.onload = () => {
     if(xhr.status === 200) {
       let data = JSON.parse(xhr.responseText);
-      console.log(data);
-      return callback(data)
+      return callback(data);
     }
   };
   xhr.send();
+}
+
+function getProfiles(json) {
+  json.people.map( person => {
+    getJSON(wikiUrl + person.name, generateHTML);
+  });
 }
 
 // Generate the markup for each profile
@@ -39,15 +44,7 @@ function generateHTML(data) {
   }
 }
 
-btn.addEventListener('click', (event) => {
-  getJSON(astrosUrl, function(json) {
-    const people = json.people;
-    for( i = 0; i < people.length; i++) {
-      let astronaut = people[i];
-      getJSON(wikiUrl + astronaut.name, generateHTML);
-    }
-    // btn.style.display = "none";
-    event.target.remove(); 
-  });
-})
-
+btn.addEventListener('click', (event) => { 
+  getJSON(astrosUrl, getProfiles);
+  event.target.remove();
+});
