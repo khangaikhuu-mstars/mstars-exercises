@@ -20,4 +20,7 @@ promise
   })
   .catch((error) => {
     document.getElementById("ajax").innerHTML = "<h2>File not found</h2>";
+  })
+  .finally(() => {
+    document.getElementById("button").style.display = "none";
   });
