@@ -1,13 +1,26 @@
-const xhr = new XMLHttpRequest();
+const promise = new Promise(function (resolve, reject) {
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", "sidebar.html");
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      let data = xhr.responseText;
+      return resolve(data);
+    } else {
+      return reject("Rejected");
+    }
+  };
+  xhr.send();
+});
 
-xhr.onreadystatechange = function () {
-  console.log(xhr.status);
-  if (xhr.status === 200) {
-    console.log("The Request is ok");
-    document.getElementById("ajax").innerHTML = xhr.responseText;
-  }
-};
+console.log(promise);
 
-xhr.open("GET", "sidebar.html");
-
-xhr.send();
+promise
+  .then((data) => {
+    document.getElementById("ajax").innerHTML = data;
+  })
+  .catch((error) => {
+    document.getElementById("ajax").innerHTML = "<h2>File not found</h2>";
+  })
+  .finally(() => {
+    document.getElementById("button").style.display = "none";
+  });
