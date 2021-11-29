@@ -4,22 +4,33 @@ const peopleList = document.getElementById('people');
 const btn = document.querySelector('button');
 
 // Make an AJAX request
-function getJSON(url, callback) {
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', url);
-  xhr.onload = () => {
-    if(xhr.status === 200) {
-      let data = JSON.parse(xhr.responseText);
-      return callback(data);
-    }
-  };
-  xhr.send();
+function getJSON(url) {
+  
+  const promise = new Promise((resolve, reject) => {
+  
+    const xhr = new XMLHttpRequest();
+  
+    xhr.open('GET', url);
+  
+    xhr.onload = () => {
+      if(xhr.status === 200) {
+        let data = JSON.parse(xhr.responseText);
+        return resolve(data);
+      } else return reject(data)
+
+    };
+    xhr.send();
+  });
+  
+  return promise;
+
 }
 
 function getProfiles(json) {
-  json.people.map( person => {
-    getJSON(wikiUrl + person.name, generateHTML);
+  const profiles = json.people.map( person => {
+    return getJSON(wikiUrl + person.name);
   });
+  return profiles;
 }
 
 // Generate the markup for each profile
@@ -45,6 +56,12 @@ function generateHTML(data) {
 }
 
 btn.addEventListener('click', (event) => { 
-  getJSON(astrosUrl, getProfiles);
+  console.log('button clicked')
+      getJSON(astrosUrl).then(data => {
+          const profiles = getProfiles(data);
+          profiles.map(profile => {
+            profile.then(data => generateHTML(data));
+      });
+  });
   event.target.remove();
 });
