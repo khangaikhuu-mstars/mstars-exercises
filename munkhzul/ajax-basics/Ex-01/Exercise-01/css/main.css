@@ -226,6 +226,8 @@ html {
 
 ul {
   list-style: none;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
 }
 
 section {
@@ -270,6 +272,7 @@ h2 {
   margin-bottom: 8px;
   color: #384047;
   line-height: 1.2;
+  padding-left: 30px;
 }
 
 h2 {
@@ -278,9 +281,10 @@ h2 {
 
 p {
   color: #8d9aa5;
-  font-size: 1.4em;
+  font-size: 2em;
   margin-bottom: 15px;
   line-height: 1.4;
+  padding-left: 30px;
 }
 
 .button {
@@ -335,6 +339,9 @@ p {
 .response p {
   margin: 0;
 }
-li{
-  margin-top: 30px;
+li {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  padding-top: 20px;
 }

@@ -1,9 +1,9 @@
 var xhr = new XMLHttpRequest();
 
-xhr.onreadystatechange = function (){
+xhr.onreadystatechange = function () {
     console.log(xhr.status);
-    if (xhr.status = 200){
-        console.log(xhr.responseText);
+    if (xhr.status = 200) {
+        console.log("req is ok");
         document.getElementById("ajax").innerHTML = xhr.responseText
     }
 }
