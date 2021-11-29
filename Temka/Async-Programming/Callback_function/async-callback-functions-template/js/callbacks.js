@@ -42,7 +42,7 @@ function generateHTML(data) {
 // getJSON(astrosUrl);
 
 
-btn.addEventListener("click", () =>{
+btn.addEventListener("click", (event) =>{
 
   getJSON(astrosUrl, function(json){
     for(let i = 0; i < json.people.length; i++){
