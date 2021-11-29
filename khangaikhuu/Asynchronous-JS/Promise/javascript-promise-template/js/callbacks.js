@@ -8,12 +8,18 @@ function getJSON(url, callback) {
   const xhr = new XMLHttpRequest();
   xhr.open('GET', url);
   xhr.onload = () => {
-    if (xhr.status === 200) {
+    if(xhr.status === 200) {
       let data = JSON.parse(xhr.responseText);
       return callback(data);
     }
   };
   xhr.send();
+}
+
+function getProfiles(json) {
+  json.people.map( person => {
+    getJSON(wikiUrl + person.name, generateHTML);
+  });
 }
 
 // Generate the markup for each profile
@@ -37,14 +43,8 @@ function generateHTML(data) {
     `;
   }
 }
-btn.addEventListener('click', (event) => {
-  getJSON(astrosUrl, function (json) {
-    const people = json.people;
-    for (i = 0; i < people.length; i++) {
-      let astronout = people[i];
-      getJSON(wikiUrl +astronout.name, generateHTML);
-    }
-    // btn.style.display = 'none'
-    event.target.remove();
-  });
+
+btn.addEventListener('click', (event) => { 
+  getJSON(astrosUrl, getProfiles);
+  event.target.remove();
 });
