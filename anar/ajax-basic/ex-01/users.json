@@ -1,0 +1,157 @@
+{
+    "meta": {
+        "pagination": {
+            "total": 1432,
+            "pages": 72,
+            "page": 1,
+            "limit": 20,
+            "links": {
+                "previous": null,
+                "current": "https://gorest.co.in/public/v1/users?page=1",
+                "next": "https://gorest.co.in/public/v1/users?page=2"
+            }
+        }
+    },
+    "data": [
+        {
+            "id": 1,
+            "name": "Miss Shakti Kaur",
+            "email": "miss_kaur_shakti@hettinger-lowe.io",
+            "gender": "male",
+            "status": "inactive"
+        },
+        {
+            "id": 2,
+            "name": "Narinder Trivedi",
+            "email": "narinder_trivedi@hahn.info",
+            "gender": "male",
+            "status": "inactive"
+        },
+        {
+            "id": 3,
+            "name": "Saroja Kakkar",
+            "email": "kakkar_saroja@mcglynn.biz",
+            "gender": "male",
+            "status": "inactive"
+        },
+        {
+            "id": 4,
+            "name": "Gouranga Deshpande",
+            "email": "deshpande_gouranga@quigley-bosco.com",
+            "gender": "female",
+            "status": "inactive"
+        },
+        {
+            "id": 5,
+            "name": "Menka Asan",
+            "email": "asan_menka@crooks.biz",
+            "gender": "male",
+            "status": "inactive"
+        },
+        {
+            "id": 6,
+            "name": "Dwaipayana Menon",
+            "email": "dwaipayana_menon@nicolas.biz",
+            "gender": "female",
+            "status": "active"
+        },
+        {
+            "id": 7,
+            "name": "Somu Kaul",
+            "email": "kaul_somu@wisozk-beier.org",
+            "gender": "male",
+            "status": "inactive"
+        },
+        {
+            "id": 8,
+            "name": "Goutam Ganaka DO",
+            "email": "do_goutam_ganaka@toy.co",
+            "gender": "female",
+            "status": "active"
+        },
+        {
+            "id": 9,
+            "name": "Sucheta Gowda",
+            "email": "sucheta_gowda@lind.name",
+            "gender": "female",
+            "status": "active"
+        },
+        {
+            "id": 10,
+            "name": "Urmila Reddy",
+            "email": "reddy_urmila@howell-ryan.net",
+            "gender": "female",
+            "status": "inactive"
+        },
+        {
+            "id": 11,
+            "name": "Adityanandan Jha V",
+            "email": "jha_adityanandan_v@walter.co",
+            "gender": "male",
+            "status": "active"
+        },
+        {
+            "id": 12,
+            "name": "Amb. Agnimitra Nehru",
+            "email": "amb_nehru_agnimitra@altenwerth-schultz.net",
+            "gender": "male",
+            "status": "inactive"
+        },
+        {
+            "id": 13,
+            "name": "Kailash Deshpande",
+            "email": "kailash_deshpande@corwin.net",
+            "gender": "female",
+            "status": "inactive"
+        },
+        {
+            "id": 14,
+            "name": "Nirbhay Kaur",
+            "email": "nirbhay_kaur@braun.org",
+            "gender": "female",
+            "status": "active"
+        },
+        {
+            "id": 15,
+            "name": "Chidambar Butt",
+            "email": "butt_chidambar@pfannerstill.net",
+            "gender": "male",
+            "status": "active"
+        },
+        {
+            "id": 16,
+            "name": "Rep. Anal Chaturvedi",
+            "email": "chaturvedi_anal_rep@goodwin.com",
+            "gender": "female",
+            "status": "inactive"
+        },
+        {
+            "id": 17,
+            "name": "Ranjit Saini",
+            "email": "saini_ranjit@hartmann-rippin.io",
+            "gender": "female",
+            "status": "inactive"
+        },
+        {
+            "id": 18,
+            "name": "Bhishma Devar",
+            "email": "devar_bhishma@kuhn.name",
+            "gender": "male",
+            "status": "inactive"
+        },
+        {
+            "id": 19,
+            "name": "Gorakhanatha Kocchar",
+            "email": "gorakhanatha_kocchar@pfeffer-heaney.name",
+            "gender": "female",
+            "status": "inactive"
+        },
+        {
+            "id": 20,
+            "name": "Gayatri Achari Esq.",
+            "email": "esq_achari_gayatri@gleason.name",
+            "gender": "male",
+            "status": "inactive"
+        }
+    ]
+}

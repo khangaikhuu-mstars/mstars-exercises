@@ -1,32 +1,37 @@
-const astrosUrl = 'http://api.open-notify.org/astros.json';
-const wikiUrl = 'https://en.wikipedia.org/api/rest_v1/page/summary/';
-const peopleList = document.getElementById('people');
-const btn = document.querySelector('button');
+const astrosUrl = "http://api.open-notify.org/astros.json";
+const wikiUrl = "https://en.wikipedia.org/api/rest_v1/page/summary/";
+const peopleList = document.getElementById("people");
+const btn = document.querySelector("button");
 
-function getJSON(url, callback) {
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', url);
-  xhr.onload = () => {
-    if(xhr.status === 200) {
-      let data = JSON.parse(xhr.responseText);
-      return callback(data);
-    }
-  };
-  xhr.send();
+function getJSON(url) {
+  const promise = new Promise(function (resolve, reject) {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        let data = JSON.parse(xhr.responseText);
+        return resolve(data);
+      } else {
+        return reject(data);
+      }
+    };
+    xhr.send();
+  });
+  return promise;
 }
 
 function getProfiles(json) {
-  json.people.map( person => {
-    getJSON(wikiUrl + person.name, generateHTML);      
-  }); 
+  json.people.map((person) => {
+    getJSON(wikiUrl + person.name);
+  });
 }
 
 // Generate the markup for each profile
 function generateHTML(data) {
-  const section = document.createElement('section');
+  const section = document.createElement("section");
   peopleList.appendChild(section);
   // Check if request returns a 'standard' page from Wiki
-  if (data.type === 'standard') {
+  if (data.type === "standard") {
     section.innerHTML = `
       <img src=${data.thumbnail.source}>
       <h2>${data.title}</h2>
@@ -43,7 +48,12 @@ function generateHTML(data) {
   }
 }
 
-btn.addEventListener('click', (event) => {
-  getJSON(astrosUrl, getProfiles);
-  event.target.remove();
+btn.addEventListener("click", (event) => {
+  astronauts = getJSON(astrosUrl).then((data) => {
+    const profiles = getProfiles(data);
+    for (i = 0; i < profiles.length; i++) {
+      profiles[i].then((data) => generateHTML(data));
+    }
+    console.log(astronauts);
+  });
 });
