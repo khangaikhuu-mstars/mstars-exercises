@@ -3,32 +3,23 @@ const wikiUrl = 'https://en.wikipedia.org/api/rest_v1/page/summary/';
 const peopleList = document.getElementById('people');
 const btn = document.querySelector('button');
 
-function getJSON(url) {
-
-  const promise = new Promise(function (resolve, reject) {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', url);
-    xhr.onload = () => {
-      if (xhr.status === 200) {
-        let data = JSON.parse(xhr.responseText);
-        return resolve(data);
-      } else {
-        return reject(data);
-      }
-    };
-    xhr.send();
-
-  });
-  return promise;
+// Make an AJAX request
+function getJSON(url, callback) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', url);
+  xhr.onload = () => {
+    if(xhr.status === 200) {
+      let data = JSON.parse(xhr.responseText);
+      return callback(data);
+    }
+  };
+  xhr.send();
 }
 
-
-
 function getProfiles(json) {
-  const profiles = json.people.map(person => {
-    return getJSON(wikiUrl + person.name);
+  json.people.map( person => {
+    getJSON(wikiUrl + person.name, generateHTML);
   });
-  return profiles
 }
 
 // Generate the markup for each profile
@@ -53,12 +44,7 @@ function generateHTML(data) {
   }
 }
 
-btn.addEventListener('click', (event) => {
-  const astronauts = getJSON(astrosUrl).then((data) => {
-    const profiles = getProfiles(data);
-    for (let i = 0; i < profiles.length; i++) {
-      profiles[i].then(data => generateHTML(data));
-    }
-  });
+btn.addEventListener('click', (event) => { 
+  getJSON(astrosUrl, getProfiles);
   event.target.remove();
 });
