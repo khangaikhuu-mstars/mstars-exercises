@@ -23,12 +23,12 @@ function requestJson(){
             console.log(file);
             let fileLen = file.data.length;
 
-            var body = document.getElementsByTagName("body")[0];
-            var tbl = document.createElement("table");
-            var tblBody = document.createElement("tbody");
+            let body = document.getElementsByTagName("body")[0];
+            let tbl = document.createElement("table");
+            let tblBody = document.createElement("tbody");
 
-            for (var i = 0; i < fileLen; i++) {
-                var row = document.createElement("tr");
+            for (let i = 0; i < fileLen; i++) {
+                let row = document.createElement("tr");
 
                 let parsedName = file.data[i].name;
                 let parsedEmail = file.data[i].email;   
@@ -37,9 +37,9 @@ function requestJson(){
 
                 let tmp = [parsedName, parsedEmail, parsedGender, parsedStatus];
                 
-                for (var j = 0; j < 4; j++) {
-                    var cell = document.createElement("td");
-                    var cellText = document.createTextNode(tmp[j]);
+                for (let j = 0; j < 4; j++) {
+                    let cell = document.createElement("td");
+                    let cellText = document.createTextNode(tmp[j]);
                     cell.appendChild(cellText);
                     row.appendChild(cell);
                 }
