@@ -2,19 +2,19 @@ const xhr = new XMLHttpRequest()
 const btn = document.getElementById("button")
 const text = document.getElementById('ajax')
 const myPromise = new Promise((resolve, reject) => {
-    xhr.open("GET", "sidebar.html")
-    btn.addEventListener("click", (event) => {
-        xhr.onreadystatechange = function () {
+    btn.addEventListener("click", ()=>{
+        xhr.open("GET", "sidebar.html")
+        xhr.onload = function () {
             if (xhr.status == 200) {
-                text.innerHTML = xhr.responseText
-                resolve("Bolson")
+                return resolve(xhr.responseText)
             } else {
-                reject("Boloogui")
+                return reject("Page not found 404")
             }
         }
-        btn.style.display = "none"
         xhr.send()
 
     })
 })
-console.log(myPromise)
+myPromise.then((data) => {
+    text.innerHTML = data
+}).catch((error) => document.getElementById("notFound").innerHTML = error).finally(()=>btn.style.display = "none")
