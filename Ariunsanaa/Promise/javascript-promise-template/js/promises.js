@@ -4,6 +4,15 @@ const peopleList = document.getElementById('people');
 const btn = document.querySelector('button');
 
 function getJSON(url) {
+<<<<<<< HEAD
+  const promise = new Promise(function (resolve, reject) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        let data = JSON.parse(xhr.responseText);
+        return callback(data);
+=======
   const promise = new Promise(function(resolve, reject){
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
@@ -13,18 +22,34 @@ function getJSON(url) {
         return resolve(data);
       } else{
         return reject(data);
+>>>>>>> 1b7e5161c9916f7d661c32971662cb5c0b855152
       }
     };
     xhr.send();
   });
+<<<<<<< HEAD
+
+=======
+>>>>>>> 1b7e5161c9916f7d661c32971662cb5c0b855152
   return promise;
 }
 
+
+
+
+
+
 function getProfiles(json) {
+<<<<<<< HEAD
+  json.people.map(person => {
+    getJSON(wikiUrl + person.name, generateHTML);
+  });
+=======
   const profiles = json.people.map( person => {
     return getJSON(wikiUrl + person.name);      
   }); 
   return profiles;
+>>>>>>> 1b7e5161c9916f7d661c32971662cb5c0b855152
 }
 
 // Generate the markup for each profile
@@ -51,6 +76,10 @@ function generateHTML(data) {
 
 btn.addEventListener('click', (event) => {
   const astronauts = getJSON(astrosUrl).then((data) => {
+<<<<<<< HEAD
+    console.log(data.people);
+  });
+=======
     const profiles = getProfiles(data);
     // for( i = 0; i < profiles.length; i ++ ) {
     //   profiles[i].then(data => generateHTML(data))
@@ -60,4 +89,5 @@ btn.addEventListener('click', (event) => {
     })
   });
   
+>>>>>>> 1b7e5161c9916f7d661c32971662cb5c0b855152
 });

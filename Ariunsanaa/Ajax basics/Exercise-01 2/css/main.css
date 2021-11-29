@@ -335,6 +335,14 @@ p {
 .response p {
   margin: 0;
 }
-li{
-  margin-top: 30px;
+
+
+
+
+.name{
+  font-size: 20px;
+}
+
+.gender{
+  font-size: 15px;
 }
