@@ -19,7 +19,7 @@ function request(){
     promise
         .then((response) => {
             console.log(response);
-            ul.innerHTML = response;
+            ul.innerHTML += response;
         })
         .catch((error) => {
             console.log(error)
