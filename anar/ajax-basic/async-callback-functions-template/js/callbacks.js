@@ -42,12 +42,14 @@ function generateHTML(data) {
 
 // getJSON(astrosUrl);
 
-btn.addEventListener('click', () => {
+btn.addEventListener('click', (event) => {
   getJSON(astrosUrl, (json) => {
     for(let i = 0; i < json.people.length; i++){
       console.log(json.astronaut);
       let astronaut = json.people[i];
       getJSON(wikiUrl + astronaut.name, generateHTML)
     }
+    // btn.style.display = "none";
+    event.target.remove();
   });
 });
