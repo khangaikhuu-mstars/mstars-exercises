@@ -27,10 +27,12 @@ function getSidebar(){
 
 document.getElementById("button").addEventListener("click", (event)=>{
     
-    getSidebar().then((data) =>{
+    getSidebar()
+    .then((data) =>{
         console.log(data)
         document.getElementById("ajax").innerHTML = data
-    }).catch((error)=>{
+    })
+    .catch((error)=>{
         console.log(error)
         document.getElementById("ajax").innerHTML = "<h2> Page is not found</h2>"
     })
