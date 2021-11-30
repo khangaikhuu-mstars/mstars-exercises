@@ -17,8 +17,20 @@ function PromisifyingTimeout(fn, time) {
 function countThree() {
   console.log('3...');
 }
+function countTwo(){
+  console.log('2...');
+}
+function countOne(){
+  console.log('1...');
+}
+function done(){
+  console.log('Done!');
+}
 // гэх мэтээр үргэлжлүүлэн бусад хэрэгтэй функцүүдийг бичнэ үү
 
 // Даалгаврыг эндээс эхлэн хийнэ үү
 
 PromisifyingTimeout(countThree, 1000)
+    .then(function () {
+
+    return PromisifyingTimeout(countTwo, 1000)});
