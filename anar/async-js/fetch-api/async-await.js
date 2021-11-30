@@ -1,4 +1,7 @@
-var xhr = new XMLHttpRequest();
+const ajax = document.getElementById("ajax");
+
+
+let xhr = new XMLHttpRequest();
 xhr.open('GET', 'pets.json');
 
 xhr.onload = function() {
@@ -14,7 +17,9 @@ xhr.send();
 // Дээрх Ajax функцын жишээ өгөгдсөн бөгөөд энэхүү функцыг
 // 1. fetch функц рүү хөрвүүлнэ үү
 
-const ajax = document.getElementById("ajax");
+
+
+// 2. хэрвээ fetch функц рүү хөрвүүлсэн бол async/await ашиглан шинээр async функц шинээр тодорхойлоод fetch ашиглан pets.json аваад тэр утгаа буцаадаг болгоно уу
 
 async function fetchJson() {
     const data = await fetch('pets.json');
@@ -24,15 +29,11 @@ async function fetchJson() {
 fetchJson()
     .then(data =>{
         console.log('Async function starts here');
-        ajax.innerHTML = data.map(i => {
+        ajax.innerHTML += data.map(i => {
             console.log(i);
         })
     })
     .catch(() => console.log("Error occured !"))
-    .finally(() => console.log("Async function ends"));
-// 2. хэрвээ fetch функц рүү хөрвүүлсэн бол async/await ашиглан шинээр async функц шинээр тодорхойлоод fetch ашиглан pets.json аваад тэр утгаа буцаадаг болгоно уу
-
-
-
-
+    .finally(() => console.log("It's done"));
+    
 // 3. Дараа нь тухайн функцээ дуудан түүний үр дүн болон алдааг handle буюу боловсруулаад хамгийн сүүлд нь "It is done" гэсэн мессеж консоль дээр хэвлэнэ үү. async үргэлж Promise буцаадагийг санаарай
