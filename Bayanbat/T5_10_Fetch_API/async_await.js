@@ -33,4 +33,8 @@ async function goyFetchNer() {
   return u;
 };
 goyFetchNer()
-  .then((j) => console.log(j)).catch(() => console.log("that's suck")).finally(() => console.log("It is done"))
+  .then(j => {
+    j.map(d => console.log(d.name))
+  })
+  .catch(() => console.log("that's suck"))
+  .finally(() => console.log("It is done"))
