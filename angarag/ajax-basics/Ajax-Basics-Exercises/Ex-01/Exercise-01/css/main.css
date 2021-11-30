@@ -225,7 +225,8 @@ html {
 }
 
 ul {
-  list-style: none;
+  list-style: circle;
+  list-style-position: initial;
 }
 
 section {
@@ -334,4 +335,10 @@ p {
 
 .response p {
   margin: 0;
+}
+
+p{
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 16px;
+
 }
