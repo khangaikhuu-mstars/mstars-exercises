@@ -23,7 +23,7 @@ btn.addEventListener('click', ()=>{
             <li><h1>name:${people[i].name}</h1></li>
             <li>id: ${people[i].id}</li>
             <li>email: ${people[i].email}</li>
-            <li><h3>gender:${people[i].gender}</h3></li>
+            <li><h3>gender:<p>${people[i].gender}<p></h3></li>
             <li></li><h3>status:${people[i].status}</h3></li>
             `
         }
