@@ -1,0 +1,85 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="question-4.css">
+</head>
+<body>
+    <form action="">
+        <input type="button" value="Get posts' comment in console" id="Q4">
+    </form>
+    
+
+<script>
+
+
+    const commentUrl = "https://gorest.co.in/public/v1/comments"
+    const postURL = "https://gorest.co.in/public/v1/posts"
+    btn = document.getElementById("Q4")
+
+    //Get comments
+    function getComments(url){
+        let xhr = new XMLHttpRequest()
+        xhr.open("GET", url)
+
+        xhr.onload = function(){
+            if(xhr.status===200){
+                let data = JSON.parse(xhr.responseText).data
+                console.log(data)
+            }
+        }
+        xhr.send()
+    }
+
+    var posts = ""
+
+    // get posts
+    function getPosts(url){
+        let xhr = new XMLHttpRequest()
+        xhr.open("GET", url, false)
+        xhr.onload = function(){
+            if(xhr.status === 200){
+                let data =  JSON.parse(xhr.responseText)
+                //save post body
+                posts = data.data
+            }
+        }
+        xhr.send()
+    }
+
+    getPosts(postURL)
+    console.log(posts)
+
+
+    // Print comments for each posts on console
+    function consoleComments(url){
+        posts.forEach(post => {
+        let xhr = new XMLHttpRequest()
+        xhr.open("GET", url + "/" + post.id + "/comments")
+    
+        xhr.onload = function(){
+            if(xhr.status === 200){
+                console.log(JSON.parse(xhr.responseText).data)
+            }
+        }
+        xhr.send()
+    })
+    }
+    
+        
+
+    btn.addEventListener("click", ()=> {
+        consoleComments(postURL)
+    }
+    )
+
+
+</script>
+
+</body>
+</html>

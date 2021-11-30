@@ -37,7 +37,7 @@ function generateHTML(data) {
     `;
   }
 }
-btn.addEventListener('click', () => (getJSON(astrosUrl, (json) => {
+btn.addEventListener('click', ()=> (getJSON(astrosUrl, (json) => {
     for (i = 1; i < json.people.length; i++) {
       let astronaut = json.people[i];
       getJSON(wikiUrl + astronaut.name, generateHTML);
