@@ -20,17 +20,3 @@ function countThree() {
 // гэх мэтээр үргэлжлүүлэн бусад хэрэгтэй функцүүдийг бичнэ үү
 
 // Даалгаврыг эндээс эхлэн хийнэ үү
-
-function countTwo() {
-  console.log('3...');
-}
-function CountTwo(){
-  console.log('2...')
-}
-function CountOne(){
-  console.log('1...')
-}
-
-PromisifyingTimeout(countThree, 1000).then((data)=>{
-  console.log(data)
-})
