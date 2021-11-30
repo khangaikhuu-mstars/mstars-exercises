@@ -1,11 +1,9 @@
 // Ajax call for pets.json file
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'pets.json');
-
 xhr.onload = function() {
   console.log(xhr.responseText);
 }
-
 xhr.send();
 
 
