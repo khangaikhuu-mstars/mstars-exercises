@@ -21,3 +21,5 @@ const cow = {
 };
 
 dog.voice();
+cat.voice();
+cow.voice();
