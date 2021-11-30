@@ -14,7 +14,8 @@ async function asyncFetch() {
 console.log('this continues')
 
 asyncFetch()
-  .then((data) => console.log(data)).catch((error) => console.log(error));
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
 
 
 

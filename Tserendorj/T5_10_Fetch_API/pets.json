@@ -8,5 +8,10 @@
     "name": "muur",
     "type": "cat",
     "breed": "egyptian"
+  },
+  {
+    "name": "TSeegii",
+    "type": "human",
+    "breed": "M0ngolia"
   }
 ]
