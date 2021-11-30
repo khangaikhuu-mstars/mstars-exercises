@@ -20,17 +20,21 @@ function countThree() {
 // гэх мэтээр үргэлжлүүлэн бусад хэрэгтэй функцүүдийг бичнэ үү
 
 // Даалгаврыг эндээс эхлэн хийнэ үү
-
-function countTwo() {
-  console.log('3...');
-}
-function CountTwo(){
+function countTwo(){
   console.log('2...')
 }
-function CountOne(){
+function countOne(){
   console.log('1...')
 }
 
-PromisifyingTimeout(countThree, 1000).then((data)=>{
-  console.log(data)
-})
+function done(){
+  console.log("done!")
+}
+
+PromisifyingTimeout(countThree, 1000)
+  .then(() => PromisifyingTimeout(countTwo,1000))
+  .then(()=> PromisifyingTimeout(countOne,1000))
+  .then(()=>PromisifyingTimeout(done, 1000))
+  .catch(data => console.log(data))
+  
+
