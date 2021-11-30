@@ -13,39 +13,33 @@ function getJSON() {
                 document.getElementById("ajax").innerHTML = xhr.responseText;
                 return resolve(data)
             } else {
-             return   reject("rejeted")
+                return reject("rejeted")
 
             }
         }
         xhr.send()
-        
-        
-        
-    }) 
+
+
+
+    })
     console.log(myPromise)
-    
+
     return myPromise
 }
 
 
-document.getElementById("button").addEventListener("click", (event)=>{
-   getJSON().then((data) =>{
-       console.log(data)
-       data = document.getElementById("ajax").innerHTML
-   }).catch ((error) =>{
-       console.log(error)
-       document.getElementById("ajax").innerHTML = error
-   })
-   
-   .finally(()=>{
-       btn.style.display = 'none'
-   })
+document.getElementById("button").addEventListener("click", (event) => {
+    getJSON().then((data) => {
+            console.log(data)
+            data = document.getElementById("ajax").innerHTML
+        }).catch((error) => {
+            console.log(error)
+            document.getElementById("ajax").innerHTML = error
+        })
+
+        .finally(() => {
+            btn.style.display = 'none'
+        })
     console.log(getJSON())
 
 })
-
-
-
-
-
-

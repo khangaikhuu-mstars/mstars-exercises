@@ -1,0 +1,11 @@
+[{
+        "name": "banhar",
+        "type": "dog",
+        "breed": "mongolian"
+    },
+    {
+        "name": "muur",
+        "type": "cat",
+        "breed": "egyptian"
+    }
+]
