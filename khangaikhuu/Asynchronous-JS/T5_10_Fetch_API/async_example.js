@@ -3,7 +3,7 @@ async function asyncExample() {
   console.log("and this waits for the await resolve", a);
 }
 
-asyncExample();
+// asyncExample();
 
 async function asyncFetch() {
   const a = await fetch("pets.json");
