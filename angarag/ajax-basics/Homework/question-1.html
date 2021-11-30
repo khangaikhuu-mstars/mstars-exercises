@@ -40,7 +40,7 @@
     const text = document.getElementById("responseText")
     const token = "a6151687d356e95518c09d254afa0e24498e625bee31c554e6106025ca5fac08"
     xhr.open("POST",
-        "https://gorest.co.in/public/v1/users?access-token=a6151687d356e95518c09d254afa0e24498e625bee31c554e6106025ca5fac08"
+        "https://gorest.co.in/public/v1/users"
     )
     xhr.setRequestHeader("Accept", "application/json")
     xhr.setRequestHeader("Content-Type", "application/json")
@@ -54,8 +54,7 @@
         "name": "John Doe",
         "gender": "male",
         "email": "jdoe@gmail.com",
-        "status": "active",
-        "message": "please work"
+        "status": "active"
     }
     xhr.send(json)
 </script>
