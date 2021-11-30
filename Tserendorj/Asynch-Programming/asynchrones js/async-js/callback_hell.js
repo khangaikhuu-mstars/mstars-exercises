@@ -1,12 +1,12 @@
 // Өгөгдсөн нь доорх nested callback setTimeout функцүүд болно.
 // Үүнийг callback hell гэж нэрлэж болох бөгөөд энэ давхарлан дуудсан функцүүд яг юу хийгээд байгааг мэдэхэд их төвөгтэй болно. Үүнийг ойлгомжтой болгохын тулд доорх даалгавруудыг хийнэ үү
-setTimeout(function() {
+setTimeout(function () {
   console.log('3...')
-  setTimeout(function() {
+  setTimeout(function () {
     console.log('2...')
-    setTimeout(function() {
+    setTimeout(function () {
       console.log('1...')
-      setTimeout(function() {
+      setTimeout(function () {
         console.log('DONE!')
       }, 1000)
     }, 1000)
