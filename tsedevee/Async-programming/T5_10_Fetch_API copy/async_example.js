@@ -7,7 +7,7 @@ async function asyncExample() {
 
 async function asyncFetch() {
   const a = await fetch('pets.json');
-  const  response = a.json();
+  const response = await a.json();
   return response;
 }
 
