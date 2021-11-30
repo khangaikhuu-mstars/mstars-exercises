@@ -1,0 +1,17 @@
+[
+  {
+    "name": "banhar",
+    "type": "dog",
+    "breed": "mongolian"
+  },
+  {
+    "name": "muur",
+    "type": "cat",
+    "breed": "egyptian"
+  },
+  {
+    "name": "TSeegii",
+    "type": "human",
+    "breed": "M0ngolia"
+  }
+]
