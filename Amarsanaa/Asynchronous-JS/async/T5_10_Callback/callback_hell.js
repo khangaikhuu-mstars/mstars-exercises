@@ -1,17 +1,26 @@
 // Өгөгдсөн нь доорх nested callback setTimeout функцүүд болно.
 // Үүнийг callback hell гэж нэрлэж болох бөгөөд энэ давхарлан дуудсан функцүүд яг юу хийгээд байгааг мэдэхэд их төвөгтэй болно. Үүнийг ойлгомжтой болгохын тулд доорх даалгавруудыг хийнэ үү
-// setTimeout(function () {
-//   console.log("3...");
-//   setTimeout(function () {
-//     console.log("2...");
-//     setTimeout(function () {
-//       console.log("1...");
-//       setTimeout(function () {
-//         console.log("DONE!");
-//       }, 1000);
-//     }, 1000);
-//   }, 1000);
-// }, 0);
+setTimeout(function () {
+  console.log("6...");
+  setTimeout(function () {
+    console.log("5...");
+    setTimeout(function () {
+      console.log("4...");
+      setTimeout(function () {
+        console.log("3...");
+        setTimeout(function () {
+          console.log("2...");
+          setTimeout(function () {
+            console.log("1...");
+            setTimeout(function () {
+              console.log("DONE!");
+            }, 1000);
+          }, 1000);
+        }, 1000);
+      }, 1000);
+    }, 1000);
+  }, 1000);
+}, 0);
 
 // Даалгавар 1
 // Энэхүү функцүүдийг хооронд нь ингэж давхардуулахгүйгээр
@@ -43,21 +52,21 @@
 
 // countThree();
 
-const promise = new Promise(function (resolve, reject) {
-  resolve("");
-});
+// const promise = new Promise(function (resolve, reject) {
+//   resolve("");
+// });
 
-promise
-  .then(() => {
-    console.log("3...");
-  })
+// promise
+//   .then(() => {
+//     console.log("3...");
+//   })
 
-  .then(() => {
-    console.log("2...");
-  })
-  .then(() => {
-    console.log("1...");
-  })
-  .then(() => {
-    console.log("DONE!");
-  });
+//   .then(() => {
+//     console.log("2...");
+//   })
+//   .then(() => {
+//     console.log("1...");
+//   })
+//   .then(() => {
+//     console.log("DONE!");
+//   });
