@@ -1,17 +1,27 @@
 // Өгөгдсөн нь доорх nested callback setTimeout функцүүд болно.
 // // Үүнийг callback hell гэж нэрлэж болох бөгөөд энэ давхарлан дуудсан функцүүд яг юу хийгээд байгааг мэдэхэд их төвөгтэй болно. Үүнийг ойлгомжтой болгохын тулд доорх даалгавруудыг хийнэ үү
-// setTimeout(function() {
-//     console.log('3...')
-//     setTimeout(function() {
-//       console.log('2...')
-//       setTimeout(function() {
-//         console.log('1...')
-//         setTimeout(function() {
-//           console.log('DONE!')
-//         }, 1000)
-//       }, 1000)
-//     }, 1000)
-//   }, 0);
+setTimeout(function() {
+  console.log('6...')
+  setTimeout(function(){
+    console.log('5...')
+    setTimeout(function(){
+      console.log('4...')
+      setTimeout(function(){
+        console.log('3...')
+        setTimeout(function(){
+          console.log('2...')
+          setTimeout(function(){
+            console.log('1...')
+            setTimeout(function(){
+              console.log('DONE!')
+            }, 1000)
+          }, 1000)
+        }, 1000)
+      }, 1000)
+    }, 1000)
+  }, 1000)
+}, 0)
+    
   
   // Даалгавар 1
   // Энэхүү функцүүдийг хооронд нь ингэж давхардуулахгүйгээр 
@@ -24,8 +34,8 @@
   //   setTimeout(countTwo, 1000);
   // }
 
-  // // гэх мэтээр үргэлжлүүлэн бичнэ үү.
-  // // энэ мөрнөөс доош өөрийн хариултыг оруулна уу.
+  // // // гэх мэтээр үргэлжлүүлэн бичнэ үү.
+  // // // энэ мөрнөөс доош өөрийн хариултыг оруулна уу.
   
   // function countTwo() {
   //   console.log('2...');
@@ -42,9 +52,3 @@
   // }
 
   // countThree()
-
-  // promise bolgoh
-
-const myPromise = new Promise (resolve, reject){
-  
-}
