@@ -38,26 +38,23 @@
     let xhr = new XMLHttpRequest()
     const btn = document.getElementById("btn")
     const text = document.getElementById("responseText")
-    const token = "a6151687d356e95518c09d254afa0e24498e625bee31c554e6106025ca5fac08"
     xhr.open("POST",
-        "https://gorest.co.in/public/v1/users?access-token=a6151687d356e95518c09d254afa0e24498e625bee31c554e6106025ca5fac08"
+        "https://gorest.co.in/public/v1/users"
     )
-    xhr.setRequestHeader("Accept", "application/json")
     xhr.setRequestHeader("Content-Type", "application/json")
-    xhr.setRequestHeader("Authorization", `Bearer ${token}`)
+    xhr.setRequestHeader("Authorization", `Bearer a6151687d356e95518c09d254afa0e24498e625bee31c554e6106025ca5fac08`)
     xhr.onreadystatechange = function () {
         if (xhr.status == 200 || xhr.status == 201) {
             text.innerHTML = xhr.responseText;
         }
     }
     const json = {
-        "name": "John Doe",
-        "gender": "male",
-        "email": "jdoe@gmail.com",
-        "status": "active",
-        "message": "please work"
+        name: "John Doe1",
+        gender: "male",
+        email: "jdoe2@hotmail.com",
+        status: "active"
     }
-    xhr.send(json)
+    xhr.send(JSON.stringify(json))
 </script>
 
 </html>
