@@ -7,7 +7,7 @@ fetch('https://gorest.co.in/public/v1/users/3520/posts')
         console.log(data)
         const datas = data.data
         datas.map(j =>{
-            document.getElementById("ajax").innerHTML += `<ul><li>${j.title}</li> ID:${j.id} , ${j.body}</ul>`
+            document.getElementById("ajax").innerHTML += `<ul><li>${j.title}</li> ID:${j.id} ,  ${j.body}</ul>`
         })
     })
 
@@ -23,7 +23,8 @@ const requestOptions = {
     })
 };
 bodyPUT = {
-    name: 'testTugs' ,
+    name: 'Tugsuu' ,
+    email: 'testo@testooo.mn'
 }
 
 const requestOptionsForUser = {
@@ -32,8 +33,8 @@ const requestOptionsForUser = {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${token}`
     },
-    body: JSON.stringify(bodyPUT
-
+    body: JSON.stringify(
+    bodyPUT
 )
 }
 
