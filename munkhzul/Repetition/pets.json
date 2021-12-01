@@ -1,0 +1,12 @@
+{
+    "data" : [
+        {
+            "nud" : "green",
+            "age" : 3
+        },
+        {
+            "nud" : "brown",
+            "age" : 4
+        }
+    ]
+}
