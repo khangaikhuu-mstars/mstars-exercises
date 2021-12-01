@@ -47,7 +47,7 @@ promise.then((data) => {
 fetch('pets.json')
   .then(response =>
     response.json())
-  .then(data => {
+  .then(data => { 
 
     data.map(i => {
 
