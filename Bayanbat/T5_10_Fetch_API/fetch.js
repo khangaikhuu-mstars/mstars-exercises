@@ -42,4 +42,4 @@ fetch("pets.json")
     u.map(j => document.getElementById('fetch').innerHTML += j.name)
     console.log(u)
   })
-  .catch('smt went wrong')
+  .catch(console.log('smt went wrong'));

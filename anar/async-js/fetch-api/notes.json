@@ -1,0 +1,23 @@
+// get
+{
+  "meta": null,
+  "data": {
+    "id": 3525,
+    "name": "random random",
+    "email": "random@15ce.com",
+    "gender": "male",
+    "status": "active"
+  }
+}
+
+// post
+
+{
+  "meta": null,
+  "data": {
+    "id": 1619,
+    "user_id": 3525,
+    "title": "My own post",
+    "body": "random string"
+  }
+}

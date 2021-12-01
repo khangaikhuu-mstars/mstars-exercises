@@ -21,6 +21,7 @@ const promise = new Promise(function (resolve, reject) {
 
     xhr.onload = function () {
         if (xhr.status === 200) {
+            let data = JSON.parse(xhr.responseText);
             return resolve(xhr.responseText)
         } else {
             return reject("reject")
@@ -35,7 +36,7 @@ const promise = new Promise(function (resolve, reject) {
 promise
     .then((response) => {
         document.getElementById("ajax").innerHTML = response
-        // console.log(response);
+        console.log(response);
     })
     .catch((error) => {
         document.getElementById("ajax").innerHTML = error
