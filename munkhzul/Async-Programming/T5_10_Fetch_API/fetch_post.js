@@ -16,18 +16,18 @@ fetch('https://gorest.co.in/public/v1/users/3569/posts')
 })
 
 const requestOptions = {
-    method: 'PUT',
+    method: 'POST',
     headers: { 'Content-Type': 'application/json',
                'Authorization': 'Bearer faeef344894288401f95144eb46308441f0f9dc1e2fb34ab38fa4671f96b6c9a' 
              },
     body: JSON.stringify({ 
         title: 'Fetch POST Request Example', 
         body: 'Fetch post example' ,
-        name: 'Tester2'
+        name: 'Tester3'
     })
-};
+}
 
-fetch('https://gorest.co.in/public/v1/users/3569', requestOptions)
+fetch('https://gorest.co.in/public/v1/users/3569/posts', requestOptions)
 .then((response) => {
     return response.json();
 })
