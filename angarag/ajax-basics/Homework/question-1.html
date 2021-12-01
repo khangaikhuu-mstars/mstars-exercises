@@ -22,6 +22,10 @@
             font-weight: 600;
             margin: 30px 50px;
         }
+
+        #responseText {
+            color: white;
+        }
     </style>
     <title>Homework</title>
 
@@ -30,34 +34,56 @@
 <body>
     <main>
         <button id="btn">My fancy button</button>
-        <div id="responseText"></div>
+        <ul id="responseText"></ul>
     </main>
 </body>
 
 <script>
-    let xhr = new XMLHttpRequest()
+    // let xhr = new XMLHttpRequest()
+    // const btn = document.getElementById("btn")
+    // const text = document.getElementById("responseText")
+    // xhr.open("POST",
+    //     "https://gorest.co.in/public/v1/users"
+    // )
+    // xhr.setRequestHeader("Content-Type", "application/json")
+    // xhr.setRequestHeader("Authorization", `Bearer a6151687d356e95518c09d254afa0e24498e625bee31c554e6106025ca5fac08`)
+    // xhr.onreadystatechange = function () {
+    //     if (xhr.status == 200 || xhr.status == 201) {
+    //         text.innerHTML = xhr.responseText;
+    //     }
+    // }
+    // const json = {
+    //     name: "John Doe1",
+    //     gender: "male",
+    //     email: "jdoe2@hotmail.com",
+    //     status: "active"
+    // }
+    // xhr.send(JSON.stringify(json))
+
     const btn = document.getElementById("btn")
-    const text = document.getElementById("responseText")
-    const token = "a6151687d356e95518c09d254afa0e24498e625bee31c554e6106025ca5fac08"
-    xhr.open("POST",
-        "https://gorest.co.in/public/v1/users?access-token=a6151687d356e95518c09d254afa0e24498e625bee31c554e6106025ca5fac08"
-    )
-    xhr.setRequestHeader("Accept", "application/json")
-    xhr.setRequestHeader("Content-Type", "application/json")
-    xhr.setRequestHeader("Authorization", `Bearer ${token}`)
-    xhr.onreadystatechange = function () {
-        if (xhr.status == 200 || xhr.status == 201) {
-            text.innerHTML = xhr.responseText;
+    const text = document.getElementById('responseText')
+    btn.addEventListener('click', (event) => {
+        const requestOptions = {
+            method: "PUT",
+            headers: {
+                'Content-type': 'application/json',
+                'Authorization': "Bearer a6151687d356e95518c09d254afa0e24498e625bee31c554e6106025ca5fac08"
+            },
+            body: JSON.stringify({
+                "name": "Jamaal",
+                "email": "hahasdasad@gmail.com",
+                "status": "inactive"
+            })
         }
-    }
-    const json = {
-        "name": "John Doe",
-        "gender": "male",
-        "email": "jdoe@gmail.com",
-        "status": "active",
-        "message": "please work"
-    }
-    xhr.send(json)
+        fetch('https://gorest.co.in/public/v1/users/3530').then((response) => response.json()).then((
+            data) => {
+                console.log(data)
+            let finalData = data.data
+            // finalData.map((d) => text.innerHTML += `<li>${d.data}</li> `)
+            text.innerHTML += `<h2>${finalData.name}</h2>`
+            text.innerHTML += `<h3>${finalData.email}</h3>`
+        })
+    })
 </script>
 
 </html>
