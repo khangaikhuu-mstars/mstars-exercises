@@ -41,17 +41,17 @@ async function asyncFetch(){
 const a = await fetch("pets.json")
 const response = await a.json()
 //console.log(response)
-return response
 
-// response.forEach(element =>{
-//         document.getElementById("fetch").innerHTML +="<ul>"
-//         document.getElementById("fetch").innerHTML += `<li>${element.name}</li>`
-//         document.getElementById("fetch").innerHTML += `<li>${element.type}</li>`
-//         document.getElementById("fetch").innerHTML += `<li>${element.breed}</li>`
-//         document.getElementById("fetch").innerHTML +="</ul>"
-//       })
-
-
+response.forEach(element =>{
+          document.getElementById("fetch").innerHTML +="<ul>"
+          document.getElementById("fetch").innerHTML += `<li>${element.name}</li>`
+          document.getElementById("fetch").innerHTML += `<li>${element.type}</li>`
+          document.getElementById("fetch").innerHTML += `<li>${element.breed}</li>`
+          document.getElementById("fetch").innerHTML +="</ul>"
+        })
+  
+  
+  return response
 }
 
 
