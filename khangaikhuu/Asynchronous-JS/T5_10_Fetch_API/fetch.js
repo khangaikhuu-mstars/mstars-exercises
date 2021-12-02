@@ -1,5 +1,5 @@
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'pets.json');
+xhr.open('GET', './data/pets.json');
 
 xhr.onload = function() {
   if (xhr.status === 200) {
