@@ -8,4 +8,3 @@ function carryOn() {
 };
 
 btn.addEventListener('click', carryOn);
-
