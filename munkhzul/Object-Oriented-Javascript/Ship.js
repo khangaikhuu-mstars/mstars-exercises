@@ -13,7 +13,16 @@ class Ship {
         return `${this.type} ${today}`;
     }
     get info() {
-        return `This is ${this.type} ship. This ship weight: ${this.weight}, height: ${this.height}, width: ${this.width}`
+        return `This is ${this.type} ship. This ship 
+                weight: ${this.weight}, 
+                height: ${this.height}, 
+                width: ${this.width}`
+    }
+    set shipType(t) {
+        this.type = t;
+    }
+    set changeOwner(owner) {
+        this._owner = owner;
     }
 }
 const fighter_ship = new Ship(7,10,5,"fighter");
@@ -34,3 +43,21 @@ console.log(fighter_ship);
 fighter_ship.swimming;
 console.log(war_ship.activity);
 console.log(war_ship.info);
+console.log(tanker_ship.shipType = "pirate");
+
+
+class Owner {
+    constructor(name, adddress, phone) {
+        this.name = name;
+        this.adddress = adddress;
+        this.phone = phone;
+    }
+}
+
+const person = new Owner("Zulaa", "BGD", "+97612345678");
+const company = new Owner("MCS", "BZD", "+97612345678");
+console.log(person);
+console.log(company);
+
+fighter_ship.changeOwner = company;
+console.log(fighter_ship);
