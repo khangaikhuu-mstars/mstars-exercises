@@ -27,7 +27,7 @@ const requestOptions = {
     })
 }
 
-fetch('https://gorest.co.in/public/v1/users/3525/posts', requestOptions)
+fetch('https://gorest.co.in/public/v1/users', requestOptions)
     .then(response => {
         return response.json()
     })
