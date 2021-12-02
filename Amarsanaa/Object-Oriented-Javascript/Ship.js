@@ -26,6 +26,10 @@ class Ship {
   set changeOwner(owner) {
     this._owner = owner;
   }
+
+  get owner() {
+    return this._owner;
+  }
 }
 
 class Owner {
@@ -33,6 +37,10 @@ class Owner {
     this.name = name;
     this.address = address;
     this.phoneNumber = phoneNumber;
+  }
+
+  name() {
+    return this.name;
   }
 }
 
@@ -62,3 +70,4 @@ console.log(passengerShip);
 fighterShip.changeOwner = corp1;
 
 console.log(fighterShip);
+console.log(fighterShip.owner.name);
