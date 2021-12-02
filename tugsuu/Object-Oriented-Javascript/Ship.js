@@ -25,6 +25,10 @@ class Ship {
     set changeOwner(owner){
         this._owner = owner
     }
+    get owner(){
+        return this._owner
+    }
+    
 }
 
 const fighterShip = new Ship(7, 10, 5, "fighter")
@@ -51,15 +55,15 @@ console.log(terminalShip.info)
 fighterShip.shipType = "Pirate" //46 line 37 line ymar ch ylgaagui ym bn
 
 
-
-
 class Owner{
     constructor(name , address , phone){
         this.name = name;
         this.address = address;
         this.phone = phone;
     }
-
+    get ner(){
+        return this.name
+    }
 }
 const person = new Owner("Bold" , "Unitel" , "88881111")
 console.log(person)
@@ -68,3 +72,5 @@ console.log(company)
 
 
 fighterShip.changeOwner = company
+
+console.log(fighterShip.owner.name)
