@@ -16,6 +16,15 @@ class Ship {
     get info() {
         return `This is ${this.type} ship. bla3 ${this.height}.bla3 ${this.width}.bla3 ${this.weight}.`
     }
+    set hangover(i) {
+        this.type = i;
+    }
+    set changeOwner(owner) {
+        this._owner = owner;
+    }
+    get owner() {
+        return this._owner;
+    }
 };
 const fighterShip = new Ship(7, 10, 5, "fighter");
 const containerShip = new Ship(7, 10, 5, "container");
@@ -28,8 +37,23 @@ console.log(navalShip);
 console.log(passengerShip);
 console.log(tankerShip);
 fighterShip.type = "hangover";
+fighterShip.hangover = 'pirate';
 console.log(fighterShip);
 console.log(fighterShip.swimming)
 console.log(fighterShip.activity)
 console.log(navalShip.activity)
 console.log(navalShip.info)
+class Owner {
+    constructor(name, address, phone) {
+        this.name = name,
+            this.address = address,
+            this.phone = phone
+    }
+    name() {
+        return this.name
+    }
+}
+const bayanbat = new Owner("Bayanbat", "Sukhbaatar duureg bla3", "8675565");
+fighterShip.changeOwner = bayanbat;
+console.log(fighterShip)
+console.log(fighterShip.owner.name);
