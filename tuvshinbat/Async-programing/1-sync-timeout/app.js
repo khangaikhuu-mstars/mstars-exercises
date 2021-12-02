@@ -8,4 +8,3 @@ function wait() {
 }
 
 btn.addEventListener('click', wait);
-
