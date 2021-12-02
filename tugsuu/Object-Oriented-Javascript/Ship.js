@@ -5,18 +5,28 @@ class Ship {
         this.width = width;
         this.type = type;
     }
-    get swimming (){
+
+    get swimming() {
         console.log("ene hesgiig oilgohgui bn")
     }
 
-    get activity(){
+    get activity() {
         const today = new Date()
         return `${this.type} ${today}`
-    } 
-    get info(){
+    }
+    get info() {
         return `This is ${this.type} ship. I have ${this.height}, ${this.weight}, ${this.width}, ${this.type}`
     }
+
+    set shipType(t) {
+        this.type = t
+    }
+
+    set changeOwner(owner){
+        this._owner = owner
+    }
 }
+
 const fighterShip = new Ship(7, 10, 5, "fighter")
 const fishingShip = new Ship(5, 12, 32, "fishing")
 const passengerShip = new Ship(10, 15, 25, "passenger")
@@ -29,11 +39,32 @@ console.log(passengerShip)
 console.log(terminalShip)
 console.log(Uboot)
 
-fighterShip.type = "Travel"
+fighterShip.type = "Travel" //46 line 37 line ymar ch ylgaagui ym bn
 fighterShip.height = 5000
-fighterShip.swimming    //ene yg yagaad bgan boloo
+fighterShip.swimming //ene yg yagaad bgan boloo
 
 console.log(Uboot.swimming)
 console.log(fighterShip.activity)
 console.log(passengerShip.info)
 console.log(terminalShip.info)
+
+fighterShip.shipType = "Pirate" //46 line 37 line ymar ch ylgaagui ym bn
+
+
+
+
+class Owner{
+    constructor(name , address , phone){
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+    }
+
+}
+const person = new Owner("Bold" , "Unitel" , "88881111")
+console.log(person)
+const company = new Owner("MCS" , "CentralTower" , "88111000")
+console.log(company)
+
+
+fighterShip.changeOwner = company
