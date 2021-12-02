@@ -24,6 +24,9 @@ class Ship {
     set changeOwner(owner) {
         this._owner = owner;
     }
+    get owner() {
+        return this._owner;
+    }
 }
 const fighter_ship = new Ship(7,10,5,"fighter");
 const war_ship = new Ship(8,11,6,"war");
@@ -52,6 +55,9 @@ class Owner {
         this.adddress = adddress;
         this.phone = phone;
     }
+    get namer() {
+        return this.name;
+    }
 }
 
 const person = new Owner("Zulaa", "BGD", "+97612345678");
@@ -60,4 +66,5 @@ console.log(person);
 console.log(company);
 
 fighter_ship.changeOwner = company;
-console.log(fighter_ship);
+console.log(fighter_ship.owner.name);
+
