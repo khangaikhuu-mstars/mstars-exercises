@@ -37,6 +37,6 @@ fetch('https://gorest.co.in/public/v1/users/3529', requestOptionsForUser)
     .then((response) => {
         return response.json();
     })
-    .then((dataa) => {
-        console.log(dataa);
+    .then((data) => {
+        console.log(data);
     })
