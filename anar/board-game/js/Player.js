@@ -5,7 +5,7 @@ class Player {
         this.color = color;
         this.active = active;
         this.tokens = this.createTokens(21);
-    }
+    };
 
     createTokens(limit) {
         const tokens = [];
@@ -14,12 +14,10 @@ class Player {
             tokens.push(token);
         }
         return tokens;
-    }
+    };
 
     get unusedTokens() {
-        return this.tokens.filter(token => {
-            !token.dropped;
-        })
+        return this.tokens.filter(token => !token.dropped);
     }
 
     get activeToken(){
