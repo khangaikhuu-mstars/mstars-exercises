@@ -19,7 +19,16 @@ class Ship{
         return `This is ${this.type} ship. I have weight: ${this.weight}, height: ${this.height}, width: ${this.width} `
     }
 
+    set shipType(t){
+        this.type = t;
+    }
+    set changeOwner(owner){
+        this._owner = owner // backup property
+    }
 
+    get Owner(){
+        return this._owner;
+    }
 }
 
 const military_ship = new Ship(10, 75,200, "military");
@@ -28,6 +37,10 @@ console.log(military_ship.swimming)
 console.log(military_ship)
 console.log(military_ship.activity)
 console.log(military_ship.info)
+// set function
+military_ship.shipType="pirate"
+console.log(military_ship.type)
+
 
 // const fisherman_ship = new Ship(10,20,30, "fisherman")
 // console.log(fisherman_ship)
@@ -46,3 +59,24 @@ console.log(military_ship.info)
 // console.log(transport_ship.swimming())
 
 
+
+class Owner{
+    constructor(name,address,phone){
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+    }
+
+    get getName(){
+        return this.name
+    }
+    
+}
+
+const ownerCompany = new Owner("MCS", "Central Tower", "77771122")
+const ownerIndividual = new Owner("James Bond", "London, England", "+88997766")
+
+
+
+military_ship.changeOwner = ownerCompany
+console.log(military_ship.Owner.name)
