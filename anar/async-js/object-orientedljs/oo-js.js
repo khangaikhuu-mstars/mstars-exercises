@@ -28,6 +28,9 @@ class Ship {
     set shipType(type) {
         this.type = type;
     }
+    set changeOwner(owner) {
+        this._owner = owner;
+    }
 }
 
 class Owner{
@@ -46,13 +49,18 @@ console.log(company);
 
 
 
+const fighterShip = new Ship(20, 40, 'fighter', 10000);
 
-// const fighterShip = new Ship(20, 40, 'fighter', 10000);
-// console.log(fighterShip);
-// fighterShip.shipType = 'pirate';
-// fighterShip.info;
-// fighterShip.status;
-// console.log(fighterShip.activity);
+console.log(fighterShip);
+
+fighterShip.shipType = 'pirate';
+fighterShip.info;
+fighterShip.status;
+console.log(fighterShip.activity);
+
+fighterShip.owner = company;
+console.log(fighterShip);
+
 
 
 
