@@ -19,8 +19,11 @@ class Ship {
     set hangover(i) {
         this.type = i;
     }
-    set changeOwwner(Owner) {
-        this_owner = owner;
+    set changeOwner(owner) {
+        this._owner = owner;
+    }
+    get owner() {
+        return this._owner;
     }
 };
 const fighterShip = new Ship(7, 10, 5, "fighter");
@@ -46,7 +49,11 @@ class Owner {
             this.address = address,
             this.phone = phone
     }
+    name() {
+        return this.name
+    }
 }
 const bayanbat = new Owner("Bayanbat", "Sukhbaatar duureg bla3", "8675565");
 fighterShip.changeOwner = bayanbat;
-console.log(fighterShip);
+console.log(fighterShip)
+console.log(fighterShip.owner.name);
