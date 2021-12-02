@@ -26,19 +26,18 @@
                     Width: ${this.width}
                     `)
         }
+        set shipType(type) {
+            this.type = type;
+        }
     }
 // ]
 
 const fighterShip = new Ship(20, 40, 'fighter', 10000);
 console.log(fighterShip);
-
-fighterShip.type = 'carrier'
-// fighterShip.status;
+fighterShip.shipType = 'pirate';
 fighterShip.info;
+fighterShip.status;
 console.log(fighterShip.activity);
-
-console.log(fighterShip);
-
 
 
 
