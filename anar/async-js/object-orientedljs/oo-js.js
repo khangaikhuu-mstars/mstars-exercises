@@ -19,14 +19,20 @@ class Ship {
     }
     get info(){
         return console.log(`
-                This is a ${this.type} ship.
-                Height: ${this.height}
-                Weight: ${this.weight}
-                Width: ${this.width}
-                `)
+            This is a ${this.type} ship.
+            Height: ${this.height}
+            Weight: ${this.weight}
+            Width: ${this.width}
+        `)
     }
     set shipType(type) {
         this.type = type;
+    }
+    set changeOwner(owner) {
+        this._owner = owner;
+    }
+    get owner() {
+        return this._owner;
     }
 }
 
@@ -36,31 +42,50 @@ class Owner{
         this.address = address;
         this.phone = phone;
     }
+    name() {
+        return this.name;
+        // return `owner: ${this.name}`;
+    }
 }   
 
 
 const person = new Owner('Anar', 'Ulaanbaatar', 88887777);
 console.log(person);
+
 const company = new Owner('MCS', 'Ulaanbaatar', 77778888);
-console.log(company);
+
+
+
+const fighterShip = new Ship(20, 40, 'fighter', 10000);
+
+console.log(fighterShip);
+
+fighterShip.shipType = 'pirate';
+fighterShip.info;
+fighterShip.status;
+console.log(fighterShip.activity);
+
+fighterShip.changeOwner = company;
+// console.log(company);
+
+console.log(fighterShip.owner.name);
 
 
 
 
-// const fighterShip = new Ship(20, 40, 'fighter', 10000);
-// console.log(fighterShip);
-// fighterShip.shipType = 'pirate';
-// fighterShip.info;
-// fighterShip.status;
-// console.log(fighterShip.activity);
 
 
 
-const luxuryShip = new Ship(20, 40, 'luxury', 100000);
-const normalShip = new Ship(30, 50, 'normal', 100000);
-const carrierShip = new Ship(30, 50, 'carrier', 100000);
-const inteligenceShip = new Ship(30, 50, 'uboat', 20000);
-const fishingShip = new Ship(5, 20, 'fishing', 1000);
+
+
+
+
+
+// const luxuryShip = new Ship(20, 40, 'luxury', 100000);
+// const normalShip = new Ship(30, 50, 'normal', 100000);
+// const carrierShip = new Ship(30, 50, 'carrier', 100000);
+// const inteligenceShip = new Ship(30, 50, 'uboat', 20000);
+// const fishingShip = new Ship(5, 20, 'fishing', 1000);
 
 // const ships = [fighterShip, normalShip, carrierShip, inteligenceShip, fishingShip];
 // console.log(ships);
