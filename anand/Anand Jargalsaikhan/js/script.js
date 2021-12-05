@@ -2,7 +2,6 @@ const header = document.getElementById('header')
 const navbar = document.querySelector('.navbarr')
 function scrollDetect(e){
     let scrollTp = e.target.scrollingElement.scrollTop
-    // console.log(scrollTop)
     if(scrollTp>800){
         navbar.classlist.add('fixed-top')
     }
@@ -43,22 +42,18 @@ secondbg.open('GET', '../data/company_intro.json')
 // Send the request
 secondbg.onreadystatechange = function(){
     console.log(secondbg.readyState)
-    console.log(secondbg.status)
     if(secondbg.readyState==4){
-        if(secondbg.status==200){
-            let response = JSON.parse(secondbg.responseText)
-            let data =response.data
+            let response = JSON.parse(secondbg.responseText).data
             console.log(response)
-            console.log(data)
-            for(let i=0;i<data.length;i++){
+            for(let i=0;i<response.length;i++){
                 assignment2.innerHTML+=`<div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="cord w-100">
-                    <img class="card-img-top" src="${data[i].thumbnail}" alt="Card image cap">
+                    <img class="card-img-top" src="${response[i].thumbnail}" alt="Card image cap">
                     <div class="pt-3 card-detail">
                         <div class="flex-column justify-content-between h-100 d-flex">
                             <div>
-                                <h2 class="card-title">${data[i].title}</h5>
-                                    <p class="card-text">${data[i].content}</p>
+                                <h2 class="card-title">${response[i].title}</h5>
+                                    <p class="card-text">${response[i].content}</p>
                             </div>
                             <div>
                                 <a href="#" class="koko">Learn more</a>
@@ -69,7 +64,7 @@ secondbg.onreadystatechange = function(){
             </div>`
             }
         }
-    }
+    
 }
 secondbg.send()
 
@@ -79,22 +74,18 @@ let latestblog = new XMLHttpRequest()
 latestblog.open('GET', '../data/company_intro.json')
 latestblog.onreadystatechange = function(){
     console.log(latestblog.readyState)
-    console.log(latestblog.status)
     if(latestblog.readyState==4){
-        if(latestblog.status==200){
-            let response = JSON.parse(latestblog.responseText)
-            let data = response.data
+            let response = JSON.parse(latestblog.responseText).data
             console.log(response)
-            console.log(data)
             for(let j=0; j<data.length; j++){
                 assignment4.innerHTML+=`<div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="cardd">
-                    <img class="card-img-top img-fluid" src="${data[j].thumbnail}" alt="Card image cap">
+                    <img class="card-img-top img-fluid" src="${response[j].thumbnail}" alt="Card image cap">
                     <div class="card-body card-detail">
                         <div class="flex-column justify-content-between h-100 d-flex">
                             <div>
-                                <h2 class="card-title">${data[j].title}</h5>
-                                    <p class="card-text">${data[j].content}</p>
+                                <h2 class="card-title">${response[j].title}</h5>
+                                    <p class="card-text">${response[j].content}</p>
                             </div>
                             <div>
                                 <a href="/blog.html" class="koko">Learn more</a>
@@ -104,7 +95,6 @@ latestblog.onreadystatechange = function(){
                 </div>
             </div>`
             }
-        }
     }
 }
 latestblog.send()
