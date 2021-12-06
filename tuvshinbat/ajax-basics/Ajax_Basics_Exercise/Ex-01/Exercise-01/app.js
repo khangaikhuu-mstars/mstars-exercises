@@ -4,7 +4,7 @@ var xhrResult = '';
 xhr.onload = function () {
     if (xhr.status === 200) {
         console.log("the Request is ok");
-        document.getElementById("ajax").innerHTML = "the Request is ok";
+        document.getElementById("ajax").innerHTML += `  the    Request   is ok`;
         const response = xhr.responseText;
         xhrResult = response;
 
@@ -16,5 +16,3 @@ xhr.onload = function () {
 }
 xhr.open("GET", "sidebar.html");
 xhr.send();
-
-
