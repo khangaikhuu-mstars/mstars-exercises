@@ -1,18 +1,27 @@
 class Player {
-  constructor(playerName, id, active = false) {
-    this.playerName = playerName;
+  constructor(name, id, color, active = false) {
+    this.name = name;
     this.id = id;
+    this.color = color;
     this.active = active;
-    this.token = this.createToken(21);
+    this.tokens = this.createToken(21);
   }
-}
 
-//create player token
-createTokens(numberOfToken){
+  // create players token
+  createToken(number) {
     const tokens = [];
-    for(let i=0; i < numberOfToken; i++){
-        let token = new Token(i, this);
-        token.push(token);
+    for (let i = 0; i < number; i++) {
+      const token = new Token(i, this);
+      tokens.push(token);
     }
     return tokens;
+  }
+
+  get unusedTokens() {
+    return this.tokens.filter((token) => !token.dropped);
+  }
+
+  get activeToken() {
+    return this.unusedTokens[0];
+  }
 }

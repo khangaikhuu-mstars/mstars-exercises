@@ -1,11 +1,15 @@
-
-
 const game = new Game()
 console.log(game)
 
-document.getElementById("begin-game").addEventListener('click',()=>{
+const btn = document.getElementById("begin-game")
+btn.addEventListener("click", () => {
     game.startGame();
-    // this.style.display = "none";
-    document.getElementById('play-area').style.opacity = '1'
-    
+    btn.style.display = "none";
+    document.getElementById('play-area').style.opacity = "1";
+})
+
+
+
+document.addEventListener('keydown', function(event){
+    game.handKeyDown(event)
 })
