@@ -12,9 +12,21 @@ class Game {
     get activePlayer() {
         return this.players.find(player => player.active);
     }
-    startGame(){
+    startGame() {
         this.board.drawHTMLboard();
         this.activePlayer.activeToken.drawHTMLToken();
         this.ready = true;
+    }
+    handleKeyDown(event) {
+        if (this.ready) {
+            if (event.key == "ArrowRight") {
+                this.activePlayer.activeToken.moveRight(this.board.columns);
+            } else if (event.key == "ArrowLeft") {
+                this.activePlayer.activeToken.moveLeft();
+            } else if (event.key == "ArrowDown") {
+                this.activePlayer.activeToken.drop(Space, ()=>{ console.log('reset')})
+                //handle drop down here
+            }
+        }
     }
 }

@@ -20,5 +20,17 @@ class Game {
         this.activePlayer.activeToken.drawHTMLToken();
         this.ready = true;
     }
+
+    handleKeyDown(event) {
+        if (this.ready == true) {
+            if (event.key == "ArrowLeft") {
+                this.activePlayer.activeToken.moveLeft();
+            } else if (event.key == "ArrowRight") {
+                this.activePlayer.activeToken.moveRight(this.board.columns);
+            } else if (event.key == "ArrowDown") {
+                // this.activePlayer.activeToken.moveDown();
+            }
+        }
+    }
 }
 
