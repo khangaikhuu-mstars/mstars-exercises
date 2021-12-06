@@ -6,7 +6,7 @@ class Token {
         this.dropped = false;
     }
 
-    get drawHTMLToken() {
+    get htmlToken() {
         return document.getElementById(this.id);
     }
 

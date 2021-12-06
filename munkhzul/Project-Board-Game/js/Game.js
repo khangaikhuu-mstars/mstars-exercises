@@ -19,4 +19,16 @@ class Game {
         this.activePlayer.activeToken.drawHTMLToken();
         this.ready = true;
     }
+    handleKeyDown(event) {
+        if(this.ready){
+            if(event.key === 'ArrowLeft') {
+                this.activePlayer.activeToken.moveLeft();
+            } else if(event.key === 'ArrowRight') {
+                this.activePlayer.activeToken.moveRight(this.board.columns);
+            } else if(event.key === 'ArrowDown') {
+                console.log('it can move to the bottom');
+                //handle drop down event here
+            }
+        }
+    }
 }

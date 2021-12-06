@@ -1,6 +1,6 @@
 class Game {
     constructor(){
-        this.board = new Board
+        this.board = new Board();
         this.players = this.createPlayers();
         this.ready = false;
     }
@@ -17,9 +17,8 @@ class Game {
 
     startGame() {
         this.board.drawHTMLBoard();
-        // this.activePlayer.activeToken.drawHTMLToken();
+        this.activePlayer.activeToken.drawHTMLToken();
         this.ready = true;
     }
 
 }
-// const board = new Board();

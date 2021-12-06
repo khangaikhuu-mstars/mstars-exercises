@@ -5,7 +5,7 @@ class Space {
         this.y = y;
         this.id = `space-${x}-${y}`;
         this.token = null;
-        this.diameter = 66; 
+        this.diameter = 76; 
         this.radius = this.diameter / 2; 
     }
 
