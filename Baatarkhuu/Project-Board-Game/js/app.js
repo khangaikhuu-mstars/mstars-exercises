@@ -7,3 +7,7 @@ document.getElementById('begin-game').addEventListener('click',()=>{
     document.getElementById("begin-game").style.display = 'none'
 
 }) 
+
+document.addEventListener('keydown', (event)=>{
+    game.handleKeyDown(event);
+})
