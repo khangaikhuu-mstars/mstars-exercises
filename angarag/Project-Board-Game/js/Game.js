@@ -5,8 +5,8 @@ class Game {
         this.ready = false;
     }
     createPlayers() {
-        const player1 = new Player('Player1', "1", '#e15258');
-        const player2 = new Player('Player2', " 2", '#e59a13', true)
+        const player1 = new Player('Player1', "1", '#e15258', true);
+        const player2 = new Player('Player2', " 2", '#e59a13')
         return [player1, player2];
     }
     get activePlayer() {
@@ -102,12 +102,12 @@ class Game {
             }
         }
         //Diagonal. Left top to right bottom
-        for (let x = 0; x < this.board.columns; x++) {
-            for (let y = 0; y < this.board.rows; y++) {
+        for (let x = 3; x < this.board.columns; x++) {
+            for (let y = 3; y < this.board.rows; y++) {
                 if (this.board.spaces[x][y].owner === owner &&
-                    this.board.spaces[x + 1][y - 1].owner === owner &&
-                    this.board.spaces[x + 2][y - 2].owner === owner &&
-                    this.board.spaces[x + 3][y - 3].owner === owner) {
+                    this.board.spaces[x - 1][y - 1].owner === owner &&
+                    this.board.spaces[x - 2][y - 2].owner === owner &&
+                    this.board.spaces[x - 3][y - 3].owner === owner) {
                     win = true
                 }
             }
