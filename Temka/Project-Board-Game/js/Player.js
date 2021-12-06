@@ -19,11 +19,12 @@ class Player {
         return this.tokens.filter(token => !token.dropped)
     }
     get activeToken() {
+        console.log("active Token :" + this.unusedTokens[0])
         return this.unusedTokens[0];
     }
 
     checkTokens(){
-        return this.unusedTokens.length !== 0
+        return this.unusedTokens.length !== 0;
     }
 
 }
