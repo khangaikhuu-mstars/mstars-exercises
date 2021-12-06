@@ -21,4 +21,17 @@ class Game{
         this.activePlayer.activeToken.drawHTMLToken();
         this.ready = true;
     }
+    handleKeyDown(event){
+        if(this.ready){
+        if( event.key =="ArrowLeft" ){
+            this.activePlayer.activeToken.moveLeft();
+            console.log('left side')
+        }else if(event.key == "ArrowRight"){
+            this.activePlayer.activeToken.moveRight(this.board.columns);
+            console.log('right side')
+        }else if(event.key == "ArrowDown"){
+            console.log('can drop')
+        }
+        } 
+    }
 }
