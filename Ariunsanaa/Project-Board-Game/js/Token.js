@@ -22,7 +22,7 @@ class Token {
         return this.htmlToken.offsetLeft;
     };
     
-    
+     
     moveLeft(){
         if (this.columnLocation > 0){
             this.htmlToken.style.left = this.offsetLeft - 76;
@@ -35,5 +35,12 @@ class Token {
             this.htmlToken.style.left = this.offsetLeft + 76;
             this.columnLocation +=1;
         }
+    }
+
+    drop(target, reset){
+        $(this.htmlToken).animate({
+            top: (target.y * target.diameter)
+        }, 750, "easeOutBounce", reset 
+        );
     }
 }
