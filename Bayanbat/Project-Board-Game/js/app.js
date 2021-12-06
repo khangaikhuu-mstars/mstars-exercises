@@ -1,13 +1,13 @@
-const game = new Game();
+const game = new Game()
 // console.log(game)
 
-document.getElementById('begin-game').addEventListener('click', (e) => {
-    console.log('but')
+const btn = document.getElementById("begin-game")
+btn.addEventListener("click", () => {
     game.startGame();
-    e.target.style.display = "none";
-    document.getElementById('play-area').style.opacity = '1';
+    btn.style.display = "none";
+    document.getElementById('play-area').style.opacity = "1";
 })
+
 document.addEventListener('keydown', (event) => {
-    // console.log(event.key)
     game.handleKeyDown(event);
 })
