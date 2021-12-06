@@ -11,3 +11,8 @@ document.getElementById("begin-game").addEventListener('click', () => {
     
     document.getElementById("begin-game").style.display = 'none';
 })
+
+document.addEventListener('keydown', function(event){
+    console.log(event.key);
+    game.handleKeyDown(event);
+})
