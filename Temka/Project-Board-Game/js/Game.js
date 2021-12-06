@@ -17,4 +17,24 @@ class Game {
         this.activePlayer.activeToken.drawHTMLToken();
         this.ready = true;
     }
+
+    handKeyDown(event){
+
+        if (this.ready){
+            if (event.key == "ArrowRight"){
+                console.log("ArrowRight")
+                this.activePlayer.activeToken.moveRight(this.board.columns)
+            }else if(event.key == "ArrowLeft"){
+                this.activePlayer.activeToken.moveLeft()
+                console.log("Arrowleft")
+            }else if (event.key == "ArrowDown"){
+                console.log("ArrowDown")
+            }else if (event.key === "ArrowUp"){
+                console.log("ArrowUP")
+            }
+        
+        }
+     
+    }
+
 }
