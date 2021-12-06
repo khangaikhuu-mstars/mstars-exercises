@@ -22,7 +22,7 @@ class Token {
         return this.htmlToken.offsetLeft;
     };
     
-    
+     
     moveLeft(){
         if (this.columnLocation > 0){
             this.htmlToken.style.left = this.offsetLeft - 76;
