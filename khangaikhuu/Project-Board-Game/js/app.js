@@ -8,5 +8,5 @@ document.getElementById("begin-game").addEventListener('click', (event) =>{
 });
 
 document.addEventListener('keydown', function(event) {
-    game.handleKeyDown(event);
+    game.handleKeydown(event);
 })
