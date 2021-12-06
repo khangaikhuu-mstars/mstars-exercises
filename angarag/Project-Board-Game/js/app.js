@@ -8,6 +8,6 @@ btn.addEventListener("click", () => {
     document.getElementById('play-area').style.opacity = "1";
 })
 
-document.addEventListener('keydown', (event)=>{
+document.addEventListener('keydown', (event) => {
     game.handleKeyDown(event);
 })
