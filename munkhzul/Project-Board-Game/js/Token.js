@@ -34,10 +34,10 @@ class Token {
         }
     }
     drop(target, reset) {
+        this.dropped = true;
         $(this.htmlToken).animate({
             top: (target.y * target.diameter)
-            }, 750, 'easeOutBounce', reset
-        )
+            }, 750, 'easeOutBounce', reset);
     }
 }
  
