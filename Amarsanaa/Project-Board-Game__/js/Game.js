@@ -4,6 +4,7 @@ class Game {
     this.players = this.createPlayers();
     this.ready = false;
   }
+
   createPlayers() {
     const player1 = new Player("player1", "1", "#e15258");
     const player2 = new Player("player2", "2", "#e59a13", true);
@@ -19,14 +20,14 @@ class Game {
     this.activePlayer.activeToken.drawHTMLToken();
     this.ready = true;
   }
-  handleKeyDown(event) {
+
+  handleKeyDown(e) {
     if (this.ready) {
-      if (event.key === "ArrowLeft") {
+      if (e.key === "ArrowLeft") {
         this.activePlayer.activeToken.moveLeft();
-      } else if (event.key === "ArrowRight") {
+      } else if (e.key === "ArrowRight") {
         this.activePlayer.activeToken.moveRight(this.board.columns);
-      } else if (event.key === "ArrowDown") {
-        console.log("it can move to the bottom");
+      } else if (e.key === "ArrowDown") {
         //handle drop down event here
       }
     }
