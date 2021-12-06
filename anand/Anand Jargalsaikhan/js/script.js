@@ -1,12 +1,12 @@
-const header = document.getElementById('header')
-const navbar = document.querySelector('.navbarr')
-function scrollDetect(e){
-    let scrollTp = e.target.scrollingElement.scrollTop
-    if(scrollTp>800){
-        navbar.classlist.add('fixed-top')
+const section1 = document.getElementById('section1')
+const navbar = document.getElementById('navbarr')
+function scrollDetect(event){
+    let scrollTop = event.target.scrollingElement.scrollTop
+    if(scrollTop>section1.offsetHeight+navbar.offsetHeight){
+        navbar.classList.add('fixed-top')
     }
     else{
-        
+        navbar.classList.remove('fixed-top')
     }
 }
 // Use window.addEventListener("scroll",) Event listener. 
@@ -77,7 +77,7 @@ latestblog.onreadystatechange = function(){
     if(latestblog.readyState==4){
             let response = JSON.parse(latestblog.responseText).data
             console.log(response)
-            for(let j=0; j<data.length; j++){
+            for(let j=0; j<response.length; j++){
                 assignment4.innerHTML+=`<div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="cardd">
                     <img class="card-img-top img-fluid" src="${response[j].thumbnail}" alt="Card image cap">
