@@ -25,7 +25,7 @@ class Player {
         return this.unusedToken[0];
     }
     checkTokens(){
-        return this.unusedToken.length !== 0;
+        return this.unusedToken.length == 0 ? false: true;
 
     }
 }

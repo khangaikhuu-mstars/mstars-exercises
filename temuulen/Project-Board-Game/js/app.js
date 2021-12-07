@@ -1,11 +1,13 @@
 const game = new Game();
 
-document.getElementById("begin-game").addEventListener('click', (event) => {
+let btn = document.getElementById("begin-game");
+
+btn.addEventListener("click", () => {
     game.startGame();
-    event.target.style.display = 'none';
-    document.getElementById('play-area').style.opacity = '1'
+    document.getElementById("play-area").style.opacity = '1';
+    btn.style.display = 'none';
 });
 
-document.addEventListener('keydown', function(event){
-    game.handleKeydown(event)
+document.addEventListener('keydown', function(event) {
+    game.handleKeyDown(event);
 })
