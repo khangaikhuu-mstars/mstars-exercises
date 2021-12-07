@@ -68,13 +68,14 @@ class Game {
     }
 
     gameOver(message){
-        gameO = document.getElementById('game-over')
-        gameO.style.display = 'block';
-        gameO.textContent = message; 
+        let game_over = document.getElementById('game-over')
+        console.log(game_over  )
+        game_over.style.display = 'block';
+        game_over.textContent = message; 
     }
 
     updateGameState(token, target){
-        console.log(target)
+      
         target.mark(token);
 
         if(!this.checkForWing(target)){
@@ -90,11 +91,9 @@ class Game {
                 this.gameOver('No more tokens!');
             }
         }else {
+            console.log("win")
             this.gameOver(`${target.owner.name} wins!`)
-
         }
-
-
     }
     
     switchPlayer(){
