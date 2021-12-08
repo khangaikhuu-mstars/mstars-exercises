@@ -1,0 +1,133 @@
+.wrapper {
+  max-width: 1205px;
+  margin: 0 auto;
+}
+/* navigation menu  start */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  background-color: white;
+  margin-top: 16px;
+}
+.logo {
+  font-size: 1.5rem;
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+}
+.headerMenuElements {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: baseline;
+}
+.menuElements {
+  text-decoration: none;
+  color: #1d3444;
+}
+.headerButton {
+  border-radius: 20px;
+  background-color: #f58a074d;
+  border: none;
+  color: #f58a07;
+  padding: 12px 32px;
+}
+
+/* navigation menu end */
+/*introduction section start*/
+.ligthBackground {
+  background-color: #dceaf5;
+}
+.headerText {
+  font-size: 4rem;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-top: 30px;
+}
+.headerPragraph {
+  color: #4a5d69;
+  font-size: 16px;
+}
+.buttons {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: start;
+  padding: 0;
+}
+.button {
+  border: none;
+  padding: 12px 32px;
+  border-radius: 20px;
+  background-color: #fff0;
+  margin-bottom: 16px;
+}
+.activeButton {
+  background-color: #f58a07;
+  color: white;
+}
+.passiveButton a {
+  text-decoration: none;
+  color: #4a5d69;
+}
+.headerMiniText {
+  color: #4a5d69;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.imgs {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+/* blog post section  */
+#blogPostSectionHeaderTitle {
+  font-size: 48px;
+  color: #1d3444;
+}
+#blogPostSectionHeaderText {
+  font-size: 18px;
+  color: #4a5d69;
+}
+.businessBlogPost img {
+  border-radius: 20px;
+}
+.businessBlogPost p {
+  color: #4a5d69;
+}
+.learnMoreArrow {
+  color: #f58a07;
+  text-decoration: none;
+}
+.blogPostElements {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+/* iconbox section start */
+.iconboxallelements {
+  padding: 100px 0;
+}
+.iconBoxFirstSection {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+
+.iconBoxIcon {
+  max-width: 30px;
+}
+.iconBox {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.iconBoxElements {
+  background-color: white;
+  border-radius: 20px;
+  padding: 32px;
+}
