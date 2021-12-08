@@ -123,7 +123,7 @@ const Header = () => {
 }
 
 ReactDOM.render(
-    <Header></Header>,
+    <Header/>,
     document.getElementById("root"))
 
 
