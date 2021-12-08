@@ -1,94 +1,92 @@
 
 
-// const title = React.createElement (
-//     "h1",
-//     {id: "thisIsID", title :"This is a title"},
-//     "My first react element."
-// );
+class Header extends React.Component{
+    render(){
+        return (
+            <header>
+                <h1>{this.props.title}</h1>
+                <span className="stats">Player: {this.totalPlayers}</span>
+            </header>
+        );
+    }
+};
 
-
-// const desc = React.createElement(
-    //     "p",
-    //     null,
-    //     "I just learned to create HTML by React"
-    //     );
-    // const header = React.createElement(
-    //     "header",
-    //     null,
-    //     title, 
-    //     desc
-    //     ) 
-
-// //JSX    
-// const title = <h1> This is title </h1>;
-// const desc = <p> I just learned to create HTML by React</p>;
-
-
-//Embed Javascript Expression in JSX
-// const title = " This is title ";
-// const desc = " I just learned to create HTML by React ";
-
-// const header = (
-//     <header>
-//         <h1> { title } </h1>
-//         <p> { desc }</p>
-//     </header>
-// );
-
-// ReactDOM.render(
-//             header,
-//             document.getElementById("root")
-// );
-
-const desc = "This is my first react App";
-const myTitle = "My title"
-const username  = "Temuulen"
-
-const Player = () =>{
-    return (
-        <div className ="player">
-            <span className ="player-name">
-                Temuulen
-            </span>
-            <Counter />
-        </div>
-
-    )
+class Player extends React.Component{
+    render(){
+        console.log(this.props)
+        return (
+            <div className="player">
+                <span className="player-name">{this.props.playerName}</span>
+                <Counter  score = {this.props.score}/>
+            </div>)
+    }
 }
 
-const Counter = () =>{
-    return(
-        <div className="counter">
-                <button className="counter-action decrement">-</button>
-                <span className="counter-score">35</span>
-                <button className="counter-action increment">+</button>
-                
-        </div>
-    )
+class Counter extends React.Component{
+    constructor(){
+        super()
+        this.state = {
+            score:0
+        }
+    }
+
+    incrementScore(){
+        console.log(this)
+        this.setState({
+            score: this.state.score + 1
+        })
+    }
+
+    decrementScore(){
+        console.log(this)      
+        this.setState(prevState =>(
+            {
+            score: prevState.score - 1
+        }))
+    }
+
+
+    render(){
+        return(
+             <div className="counter">
+                    <button className="counter-action decrement" onClick = {this.decrementScore.bind(this)}>-</button>
+                    <span className="counter-score">{this.state.score}</span>
+                    <button className="counter-action increment" onClick = {this.incrementScore.bind(this)}>+</button>
+            </div>
+            )
+    }
 }
 
-const Header = () =>{
-    return (
-        <header>
-            <h1>Scoreboard</h1>
-            <span className = "stats">Player: 1</span>
-        </header>
-    )
+class App extends React.Component{
+    
+    render(){
+        return(
+            <div className ="scoreboard">
+                <Header title = "ScoreBoard" totalPlayers={this.props.initialPlayers.length} />
+    
+                {this.props.initialPlayers.map(player =>     
+                    <Player 
+                        playerName = {player.name} 
+                        // score = {player.score} 
+                        key = {player.id.toString()}
+                    />
+                )}
+            </div>
+        )
+
+    }
 }
 
 
-const App =() =>{
-    return (
-        <div className = "scoreboard">
-            <Header />
-            <Player />
-        </div>
-    )
-}
-
+let players = [{id: 1, name: "Dorj", score : 99},
+                {id: 2,name: "Dolgor", score : 88},
+                {id: 3 , name: "Dulmaa", score: 77},
+                {id: 4, name: "Dondog", score: 66}        
+] 
 
 
 ReactDOM.render(
-    <App />,
-    document.getElementById('root')
+    <App initialPlayers = {players}/>,
+    document.getElementById("root")
 )
+
