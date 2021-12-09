@@ -1,60 +1,85 @@
-// const title = "My first react element"
+const players = [
+    {
+        name: 'Windy',
+        score: 50,
+        id: 1
+    },
+    {
+        name: 'Sindy',
+        score: 25,
+        id: 2
+    },
+    {
+        name: 'Lindy',
+        score: 17,
+        id: 3
+    },
+    {
+        name: 'Andy',
+        score: 33,
+        id: 4
+    },
+    {
+        name: 'Suzy',
+        score: 41,
+        id: 5
+    }
+]
 
-// const description = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur, quisquam?"
+class Header extends React.Component {
+    render() {
+        return (
+            <header>
+                <h1>{props.title}</h1>
+                <span className="stats">Player : {this.props.totalPlayers}</span>
+            </header>
+        )
+    }
+};
 
-// const header = (
-//     <header>
-//         <h1>{title}</h1>
-//         <p>{description}</p>
-//     </header>
-// )
+class Counter extends React.Component {
+    render() {
+        return (
+            <div className="counter">
+                <button className="counter-action decrement">-</button>
+                <span className="counter-score">{props.score}</span>
+                <button className="counter-action increment">+</button>
+            </div>
+        )
+    }
+};
 
-// const desc = 'This is my first react app.'
-// const myTitleId = 'main-title'
-// const userName = 'Namuun'
+class Player extends React.Component {
+    render() {
+        return (
+            <div className="player">
+                <span className="player-name">{props.playerName}</span>
+                <Counter score={props.score}/>
+            </div>
+        )
+    }
+};
 
-const Header = () => {
-    return(
-        <header>
-            <h1 id={myTitleId}>Scoreboard</h1>
-            <span className="stats">Points</span>
-        </header>
-    )
-}
+class App extends React.Component {
+    render() {
+        return (
+            <div className="scoreboard">
+                <Header title="Scoreboard" totalPlayers={props.initialPlayers.length} />
+                
+                {props.initialPlayers.map((players) =>
+                    <Player 
+                        playerName = {players.name} 
+                        score = {players.score}
+                        key = {players.id.toString()} />
+                )}
+            </div>
+        )
+    }
+};
 
-const Player = () => {
-    return(
-        <div className="player">
-            <span className="player-name">
-                Namuun
-            </span>
 
-            <Counter />
-        </div>
-    )
-}
+ReactDOM.render (
+    <App initialPlayers = {players}/>,
+    document.getElementById("root")
+)
 
-const Counter = () => {
-    return (
-        <div className="counter">
-            <button className="counter-action decrement">-</button>
-            <span className="counter-score">35</span>
-            <button className="counter-action increment">+</button>
-        </div>
-    )
-}
-
-const App = () => {
-    return(
-        <div className="scoreboard">
-            <Header />
-
-            <Player />
-        </div>
-    )
-}
-
-ReactDOM.render(
-    <App />,
-    document.getElementById('root')
-);
