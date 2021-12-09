@@ -24,4 +24,8 @@ class Player {
     get activeToken(){
         return this.unusedTokens[0];
     }
+
+    checkTokens(){
+        return this.unusedTokens.length !== 0;
+    }
 }

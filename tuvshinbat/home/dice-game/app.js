@@ -74,7 +74,7 @@ document.getElementById("score-" + activePlayer).textContent= scores[activePlaye
 
 
 // toglogch 100 onoo hurhed hojih tul hojson esehiig shal
-if(scores[activePlayer] >= 30){
+if(scores[activePlayer] >= 10){
     document.getElementById("name-"+ activePlayer).textContent = "Winner !!!";
     document.querySelector(".player-"+ activePlayer + "-panel")
     .classList.add("winner")
@@ -90,6 +90,7 @@ if(scores[activePlayer] >= 30){
 function switchToNextPlayer(){
     roundScore = 0;
     document.getElementById("current-"+ activePlayer)
+    
     activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
    
     // ulaan tsegiig shiljuulne

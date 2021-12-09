@@ -1,5 +1,4 @@
 const game = new Game();
-console.log(game);
 
 let btn = document.getElementById("begin-game");
 

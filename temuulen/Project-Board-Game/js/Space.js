@@ -4,7 +4,7 @@ class Space {
         this.y = y;
         this.id = `space-${x}-${y}`;
         this.token = null;
-        this.diameter = 78;
+        this.diameter = 75;
         this.radius = this.diameter / 2;
     }
 
@@ -18,4 +18,17 @@ class Space {
         svgSpace.setAttributeNS(null, "stroke", "none");
         document.getElementById("mask").appendChild(svgSpace);
     }
+    mark(token) {
+        this.token = token;
+    }
+    get owner() {
+        if (this.token === null) {
+            return null;
+        } else {
+            return this.token.owner;
+        }
+    }
+    
+
 }
+
