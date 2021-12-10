@@ -16,20 +16,20 @@
 //     })
 
 
-// const element = document.querySelector('#ajax')
-// const requestOptions = {
-//     method: "POST",
-//     headers: {
-//         'Content-type': 'application/json',
-//         "Authorization": "Bearer 273d9705a351a8bc9e1cf34ac926260f50f4cfef6207db13e429258f2e0d1e7d"
-//     },
-//     body: JSON.stringify({
-//         title: 'Fetch POST request example',
-//         body: "za ym ogloo"
-//     })
+const element = document.querySelector('#ajax')
+const requestOptions = {
+    method: "POST",
+    headers: {
+        'Content-type': 'application/json',
+        "Authorization": "Bearer 273d9705a351a8bc9e1cf34ac926260f50f4cfef6207db13e429258f2e0d1e7d"
+    },
+    body: JSON.stringify({
+        title: 'Fetch POST request example',
+        body: "za ym ogloo"
+    })
 
 
-// }
+}
 
 
 
