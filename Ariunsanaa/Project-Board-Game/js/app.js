@@ -7,8 +7,8 @@ document.getElementById('begin-game').addEventListener('click',()=>{
     this.StyleSheet.display = 'none'
     document.getElementById("play-area").style.opacity = '1'
     document.getElementById("begin-game").style.display = 'none'
-})
+});
 
 document.addEventListener('keydown', (event) => {
     game.handleKeyDown(event);
-})
+});
