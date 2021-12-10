@@ -1,13 +1,21 @@
 
 import React from "react"
+import Stats from "./Stats"
 
 class Header extends React.Component {
     render() {
-        return(<header> <h1> Scoreboard</h1> <span className="stats"> player: {
-                this.props.activePlayers
-            }
-  
-            </span> </header>)
+        return(<header> 
+            
+            <h1> {this.props.title}</h1> 
+            <Stats players = {this.props.totalPlayers}/>
+            <form action="">
+                <span className="stats" >player: 1 </span>
+                <input type="text" id="addPlayer"/>
+                
+            </form>
+            
+            
+             </header>)
     }
   }
 

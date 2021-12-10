@@ -1,44 +1,32 @@
 import React from "react"
-class Counter extends React.Component {
-    state= {
-        score: 0
-    }
+const Counter = (props) =>{
+   
 
-    ;
+    // decrementscore=()=> {
+    //     this.setState(prevState=>( {
+    //                 score: prevState.score -1
+    //             }
 
-    decrementscore=()=> {
-        this.setState(prevState=>( {
-                    score: prevState.score -1
-                }
+    //         ))
+    // }
 
-            ))
-    }
+    // incrementscore=()=> {
+    //     this.setState(prevState=>( {
+    //                 score: prevState.score +1
+    //             }
 
-    incrementscore=()=> {
-        this.setState(prevState=>( {
-                    score: prevState.score +1
-                }
+    //         ))
+    // }
 
-            ))
-    }
-
-    render() {
+   
 
 
-        return(<div className="counter"> <button className="counter-action decrement"onClick= {
-                this.decrementscore
-            }
-
-            > -</button> <span className="counter-score"> {
-                this.state.score
-            }
-
-            </span> <button className="counter-action increment"onClick= {
-                this.incrementscore
-            }
-
-            > +</button> </div>)
-    }
+        return(<div className="counter"> 
+        <button className="counter-action decrement"onClick= {() => props.changeScore(props.index, -1)}> -</button> 
+    <span className="counter-score"> {props.score}</span> 
+     <button className="counter-action increment"onClick= { () => props.changeScore(props.index, 1) }> +</button> 
+     </div>)
+    
 }
 
 export default Counter

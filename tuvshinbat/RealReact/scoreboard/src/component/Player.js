@@ -1,5 +1,5 @@
 import React from "react"
-import Counter from "./Counter.js"
+import Counter from "./Counter"
 
 class Player extends React.Component {
     render() {
@@ -11,11 +11,18 @@ class Player extends React.Component {
                 this.props.ner
             }
 
-            </span> <div className="stats"></div> <span> <Counter score= {
+            </span> 
+           <Counter score= {
                 this.props.score
             }
+            changeScore= {
+                this.props.changeScore
+            }
+            index ={
+                this.props.index
+            }
 
-            /></span> </div>)
+            /> </div>)
     }
 }
 export default Player
