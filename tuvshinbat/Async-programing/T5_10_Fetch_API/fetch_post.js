@@ -1,55 +1,79 @@
-// /*
-// https://gorest.co.in/rest-console gesen site ashigalj get post hiij uzlee
-// get ni huselt yvuuldag bol post ni ni comment bichih FB post hiideg shig hereglegch talaas ymar negen ym upload oruulna
-// */
+/*
+1. https://gorest.co.in/rest-console gesen site ashigalj get post hiij uzlee
+get ni huselt yvuuldag bol post ni ni comment bichih FB post hiideg shig hereglegch talaas ymar negen ym upload oruulna
+2.
+site ruu heseg hugtsaanii daraa handahan undefined bolson baisan ni
+data.data buyu butsaj irj baigaa object oorchlogdson baina console.log hiigged uzhiig sanal bolgoy
+
+
+*/
 
 
 
-// fetch("https://gorest.co.in/public/v1/users/3567/posts")
-//     .then((response) => {
-//         console.log(response.json)
+fetch("https://gorest.co.in/public/v1/users/3567/posts")
+    .then((response) => {
+        console.log(response.json)
 
-//         return response.json()
-//     })
-//     .then((data) => {
-//         console.log(data);
-//     })
+        return response.json()
+    })
+    .then((data) => {
+        console.log(data);
+    })
+
+<<<<<<< HEAD
+const element = document.querySelector('#ajax')
+const requestOptions = {
+    method: "POST",
+    headers: {
+        'Content-type': 'application/json',
+        "Authorization": "Bearer 273d9705a351a8bc9e1cf34ac926260f50f4cfef6207db13e429258f2e0d1e7d"
+    },
+    body: JSON.stringify({
+        title: 'Fetch POST request example',
+        body: "za ym ogloo"
+    })
+=======
+>>>>>>> 1f9482b0111e80c322ee014267fb8774e033ffab
+
+const element = document.querySelector('#ajax')
+const requestOptions = {
+    method: "POST",
+    headers: {
+        'Content-type': 'application/json',
+        "Authorization": "Bearer 273d9705a351a8bc9e1cf34ac926260f50f4cfef6207db13e429258f2e0d1e7d"
+    },
+    body: JSON.stringify({
+        title: 'Fetch POST request example',
+        body: "za ym ogloo"
+    })
+
+<<<<<<< HEAD
+}
+=======
+>>>>>>> 1f9482b0111e80c322ee014267fb8774e033ffab
+
+}
 
 
-// const element = document.querySelector('#ajax')
-// const requestOptions = {
-//     method: "POST",
-//     headers: {
-//         'Content-type': 'application/json',
-//         "Authorization": "Bearer 273d9705a351a8bc9e1cf34ac926260f50f4cfef6207db13e429258f2e0d1e7d"
-//     },
-//     body: JSON.stringify({
-//         title: 'Fetch POST request example',
-//         body: "za ym ogloo"
-//     })
+// url huselt yvuullaa, requsetOption butsaj irj baigaa zaaj ogno
+fetch('https://gorest.co.in/public/v1/users/3567/posts', requestOptions)
 
 
-// }
+    .then(response => response.json())
+    .then(data => {
+
+        const posts = data.data
+        console.log(posts)
+        posts.map(one => {
 
 
+            element.innerHTML += `<h2>${one.field}</h2>`
+            element.innerHTML += `<p>${one.message}</p>`
+            element.innerHTML += `<p>${one.body}</p>`
+            element.innerHTML += `<p>${one.user_id}</p>`
+        })
 
-// fetch('https://gorest.co.in/public/v1/users/3567/posts')
-
-
-//     .then(response => response.json())
-//     .then(data => {
-
-//         const posts = data.data
-//         posts.map(one => {
-
-
-//             element.innerHTML += `<h2>${one.id}</h2>`
-//             element.innerHTML += `<p>${one.title}</p>`
-//             element.innerHTML += `<p>${one.body}</p>`
-//             element.innerHTML += `<p>${one.user_id}</p>`
-//         })
-
-//     });
+    });
 
 
 
