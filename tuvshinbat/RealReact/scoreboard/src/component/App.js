@@ -89,10 +89,12 @@ import AddPlayerForm from './AddPlayerForm';
 class App extends React.Component{
 
     state = {
-        players : [{id: 1, name: "Dorj", score : 0},
-                    {id: 2,name: "Dolgor", score : 0},
-                    {id: 3 , name: "Dulmaa", score: 0},
-                    {id: 4, name: "Dondog", score: 0}        
+        players : [{id: 1, name: "Baynaa", score : 0},
+                    {id: 2,name: "Buynaa", score : 0},
+                    {id: 3 , name: "Temka", score: 0},
+                    {id: 4, name: "Boldko", score: 0} ,
+                    {id: 4, name: "Uugnaa", score: 0}  ,
+                    {id: 4, name: "Tuvshinbat", score: 0}         
                     ]
                 }
                 
