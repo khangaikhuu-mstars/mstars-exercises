@@ -12,8 +12,11 @@ render(){
             <span className="player-name">
             <button className="remove-player" onClick={()=>{this.props.removePlayer(this.props.id)}}>x</button>
                 {this.props.playerName}</span>
-            <Counter score = {this.props.score}/>
+            <Counter score = {this.props.score} changeScore = {this.props.changeScore}
+                index = {this.props.index}
+            />
         </div>
+        
 
     )
 }
