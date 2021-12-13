@@ -64,7 +64,7 @@ iconbox.onload = () => {
     const dataJSON = JSON.parse(iconbox.responseText)
     const datas = dataJSON.data
     for (i = 0; i < datas.length; i++) {
-        document.getElementById("iconbox").innerHTML += `<div class="col-4 iconBoxElements">
+        document.getElementById("iconbox").innerHTML += `<div class="col-lg-4 iconBoxElements">
     <img class="iconBoxIcon" " src="${datas[i].icon}"  alt="...">
         <h2>${datas[i].title}</h2>
         <p>${datas[i].content.slice(0,100)}</p>
