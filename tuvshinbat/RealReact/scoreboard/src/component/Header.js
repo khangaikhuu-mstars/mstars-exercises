@@ -2,21 +2,23 @@
 import React from "react"
 import Stats from "./Stats"
 
-class Header extends React.Component {
-    render() {
-        return(<header> 
-            
-            <h1> {this.props.title}</h1> 
-            <Stats players = {this.props.totalPlayers}/>
-            <form action="">
-                <span className="stats" >player: 1 </span>
-                <input type="text" id="addPlayer"/>
-                
-            </form>
-            
-            
-             </header>)
-    }
-  }
 
-  export default Header;
+class Header extends React.Component{
+    render(){
+        return (
+            <header>
+
+                <Stats players = {this.props.totalPlayers}/>
+                <h1> Scoreboard</h1>
+                <span className="stats">Player: 1</span>
+                <form action="">
+                    <input type="text"  id = "addPlayer"/>
+                    <input type="submit" onClick={()=>{this.props.addPlayerHandle(this.props.id)}}/>
+                </form>
+            </header>        
+        );
+    }    
+};    
+
+
+export default Header;
