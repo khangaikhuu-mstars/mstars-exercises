@@ -124,7 +124,7 @@
 .iconBox {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  /* gap: 20px; */
 }
 .iconBoxElements {
   background-color: white;
