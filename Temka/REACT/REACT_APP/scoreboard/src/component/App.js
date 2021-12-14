@@ -98,17 +98,33 @@ class App extends React.Component{
                 
 prevPlayerId = 5;
 
+
+    orderScore =()=>{
+        let scores = this.state.players.map(player => parseInt(player.score))
+        console.log(scores)
+        scores = scores.sort(function (a, b) { return a - b; }).reverse()
+        console.log(scores)
+        console.log(scores.slice(0,3))
+        
+        console.log(typeof scores.slice(0,3)[0])
+        return scores.slice(0,3)
+        
+    }
+
+
+
     handleRemovePlayer = (id)=>{
+        
         this.setState(data =>    
             ({  
                 players: data.players.filter(f => {
-                    console.log(f)
                     return f.id !== id})
             })    
         )
     }
 
     handleScoreChange = (index, num)=>{
+     
         //console.log("index:" + index + " num:"+ num)
 
         this.setState(prevState =>{
@@ -139,6 +155,22 @@ prevPlayerId = 5;
         })
     }
 
+    getMedal =(player)=>{
+        const bestThreeScores = this.orderScore()
+        if (!bestThreeScores.includes(player.score)){
+            return null;
+        }else{
+            if(bestThreeScores[0] == player.score){
+                return "gold";
+            }else if(bestThreeScores[1] == player.score){
+                return 'silver';
+            }else{
+                return "bronze";
+        }
+    }
+    console.log(bestThreeScores)
+    console.log(player.score)
+    };
   
 
     render(){
@@ -154,7 +186,7 @@ prevPlayerId = 5;
                             key={player.id.toString()}
                             removePlayer = {this.handleRemovePlayer}
                             changeScore = {this.handleScoreChange}
-                            />)
+                            medal = {this.getMedal(player)}/>)
                 })}
 
                 <AddPlayerForm  addPlayer = {this.handleAddPleyer}/>
