@@ -20,20 +20,6 @@ fetch("https://gorest.co.in/public/v1/users/3567/posts")
         console.log(data);
     })
 
-<<<<<<< HEAD
-const element = document.querySelector('#ajax')
-const requestOptions = {
-    method: "POST",
-    headers: {
-        'Content-type': 'application/json',
-        "Authorization": "Bearer 273d9705a351a8bc9e1cf34ac926260f50f4cfef6207db13e429258f2e0d1e7d"
-    },
-    body: JSON.stringify({
-        title: 'Fetch POST request example',
-        body: "za ym ogloo"
-    })
-=======
->>>>>>> 1f9482b0111e80c322ee014267fb8774e033ffab
 
 const element = document.querySelector('#ajax')
 const requestOptions = {
@@ -47,10 +33,6 @@ const requestOptions = {
         body: "za ym ogloo"
     })
 
-<<<<<<< HEAD
-}
-=======
->>>>>>> 1f9482b0111e80c322ee014267fb8774e033ffab
 
 }
 
