@@ -8,7 +8,7 @@ class Header extends React.Component{
     render(){
         return (
             <header>
-
+                {console.log(this)}
                 <Stats players = {this.props.totalPlayers}/>
                 <h1> Scoreboard</h1>
                

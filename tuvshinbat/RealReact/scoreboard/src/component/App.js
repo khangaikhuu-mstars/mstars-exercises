@@ -93,12 +93,12 @@ class App extends React.Component{
                     {id: 2,name: "Buynaa", score : 0},
                     {id: 3 , name: "Temka", score: 0},
                     {id: 4, name: "Boldko", score: 0} ,
-                    {id: 4, name: "Uugnaa", score: 0}  ,
-                    {id: 4, name: "Tuvshinbat", score: 0}         
+                    {id: 5, name: "Uugnaa", score: 0}  ,
+                    {id: 6, name: "Tuvshinbat", score: 0}         
                     ]
                 }
                 
-prevPlayerId = 5;
+    prevPlayerId = 6;
 
     handleRemovePlayer = (id)=>{
         this.setState(data =>    
@@ -126,6 +126,7 @@ prevPlayerId = 5;
                 players : updatedPlayers
             };
         });
+        
     }
 
     handleAddPleyer = (name) => {
