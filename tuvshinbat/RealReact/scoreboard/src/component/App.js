@@ -140,10 +140,20 @@ prevPlayerId = 5;
             ]
         })
     }
+    getHighScore = () => {
+        const score =  this.state.players.map(p => p.score);
+        const highscore = Math.max(...score);
+           if(highscore  ){
+               return highscore
+           }
+           return null
+        
+    }
 
   
 
     render(){
+        const highscore =this.getHighScore()
         return (
             <div className="scoreboard">
                 <Header  totalPlayers ={this.state.players} />
@@ -156,6 +166,7 @@ prevPlayerId = 5;
                             key={player.id.toString()}
                             removePlayer = {this.handleRemovePlayer}
                             changeScore = {this.handleScoreChange}
+                            isHighScore ={highscore === player.score}
                             />)
                 })}
 

@@ -16,7 +16,7 @@ class Stopwatch extends Component{
 
    tick = () =>{
    
-       if(this.state.isRunning){
+      if(this.state.isRunning){
            const now =Date.now()
         this.setState(prevstate =>({
             previusTime: now ,
