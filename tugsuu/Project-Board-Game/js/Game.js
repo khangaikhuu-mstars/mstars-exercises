@@ -136,7 +136,6 @@ class Game {
         return win
     }
 
-
     gameOver(message) {
         document.getElementById("game-over").style.display = 'block'
         document.getElementById("game-over").textContent = message

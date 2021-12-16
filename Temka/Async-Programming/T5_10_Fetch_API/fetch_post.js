@@ -89,13 +89,3 @@ const requestOptionsForPUT = {
 fetch("https://gorest.co.in/public/v1/users/3573", requestOptionsForPUT)
     .then(response => response.json())
     .then(data => console.log(data))
-
-
-
-
-
-
-
-
-
-
