@@ -281,3 +281,22 @@ svg {
     font-size: 2em;
     line-height: 2em;
   }
+
+
+.gold{
+  fill: #FFC657;
+  animation: grow 0.35s ease-in-out;
+  transform-origin: 50% 50%;
+}
+
+.silver{
+  fill: #C0c0c0;
+  animation: grow 0.35s ease-in-out;
+  transform-origin: 50% 50%;
+}
+
+.bronze{
+  fill: #CD7f32;
+  animation: grow 0.35s ease-in-out;
+  transform-origin: 50% 50%;
+}
