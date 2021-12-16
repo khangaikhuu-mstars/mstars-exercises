@@ -1,10 +1,10 @@
-
 import '../App.css';
 import Player from './Player';
 import Header from './Header';
 import Counter from './Counter';
 
 import React from "react"
+import AddPlayerForm from './AddPlayerForm';
 
 // function App() {
 //   return (
@@ -89,35 +89,107 @@ import React from "react"
 class App extends React.Component{
 
     state = {
-        players : [{id: 1, name: "Dorj", score : 99},
-                    {id: 2,name: "Dolgor", score : 88},
-                    {id: 3 , name: "Dulmaa", score: 77},
-                    {id: 4, name: "Dondog", score: 66}        
-                    ] 
+        players : [{id: 1, name: "Dorj", score : 0},
+                    {id: 2,name: "Dolgor", score : 0},
+                    {id: 3 , name: "Dulmaa", score: 0},
+                    {id: 4, name: "Dondog", score: 0}        
+                    ]
+                }
+                
+prevPlayerId = 5;
+
+
+    orderScore =()=>{
+        let scores = this.state.players.map(player => parseInt(player.score))
+        console.log(scores)
+        scores = scores.sort(function (a, b) { return a - b; }).reverse()
+        console.log(scores)
+        console.log(scores.slice(0,3))
+        
+        console.log(typeof scores.slice(0,3)[0])
+        return scores.slice(0,3)
+        
     }
-    
+
+
+
     handleRemovePlayer = (id)=>{
-        this.setState(data => ({
-            players: data.players.filter(f => {
-                console.log(f)
-                return f.id !== id
-        })
-        }))
+        
+        this.setState(data =>    
+            ({  
+                players: data.players.filter(f => {
+                    return f.id !== id})
+            })    
+        )
     }
+
+    handleScoreChange = (index, num)=>{
+     
+        //console.log("index:" + index + " num:"+ num)
+
+        this.setState(prevState =>{
+            // score: (prevState.players[index].score += num)
+       
+            const updatedPlayers = [...prevState.players]
+    
+            const updatedPlayer = {...updatedPlayers[index]}
+            updatedPlayer.score += num
+            updatedPlayers[index] = updatedPlayer
+
+            return {
+                players : updatedPlayers
+            };
+        });
+    }
+
+    handleAddPleyer = (name) => {
+        this.setState({
+            players: [
+                ...this.state.players,
+                {
+                    name:name,
+                    score:0,
+                    id: this.prevPlayerId +=1
+                }
+            ]
+        })
+    }
+
+    getMedal =(player)=>{
+        const bestThreeScores = this.orderScore()
+        if (!bestThreeScores.includes(player.score)){
+            return null;
+        }else{
+            if(bestThreeScores[0] == player.score){
+                return "gold";
+            }else if(bestThreeScores[1] == player.score){
+                return 'silver';
+            }else{
+                return "bronze";
+        }
+    }
+    console.log(bestThreeScores)
+    console.log(player.score)
+    };
+  
 
     render(){
         return (
             <div className="scoreboard">
-                <Header />
-                {this.state.players.map((player) =>{   
+                <Header  totalPlayers ={this.state.players} />
+                {this.state.players.map((player,index) =>{   
                     return (<Player 
                             playerName = {player.name}
                             score = {player.score}
                             id = {player.id}
+                            index = {index}
                             key={player.id.toString()}
                             removePlayer = {this.handleRemovePlayer}
-                            />)
+                            changeScore = {this.handleScoreChange}
+                            medal = {this.getMedal(player)}/>)
                 })}
+
+                <AddPlayerForm  addPlayer = {this.handleAddPleyer}/>
 
             </div>
             
