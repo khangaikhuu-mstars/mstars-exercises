@@ -20,4 +20,15 @@ class Space {
         svgSpace.setAttributeNS(null, "stroke", "none");
         document.getElementById("mask").appendChild(svgSpace);
     }
+    get owner() {
+        if (this.token === null) {
+            return null;
+        } else {
+            return this.token.owner
+        }
+    }
+    mark(token) {
+        this.token = token
+    }
+
 }

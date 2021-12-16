@@ -31,4 +31,13 @@ class Token {
             this.columnLocation += 1;
         }
     }
+    get drop() {
+
+    }
+    drop(target, reset) {
+        this.dropped = true
+        $(this.htmlToken).animate({
+            top: (target.y * target.diameter)
+        }, 750, 'easeOutBounce', reset)
+    }
 }

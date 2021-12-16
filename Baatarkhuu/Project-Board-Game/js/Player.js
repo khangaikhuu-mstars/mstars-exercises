@@ -21,6 +21,10 @@ class Player{
     get activeToken(){
         return this.unusedTokens[0];
     }
+    
+    checkTokens(){
+        return this.unusedTokens.length == 0 ? false : true ;
+    }
 }
 // const player1 = new Player("player1", "id1");
 // console.log(player1)
