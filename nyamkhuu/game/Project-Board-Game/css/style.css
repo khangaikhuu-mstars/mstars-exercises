@@ -78,8 +78,8 @@ body {
 }
 
 .token {
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
 	transform: scale(1.1);
 	transform-origin: center;
     border-radius: 100%;

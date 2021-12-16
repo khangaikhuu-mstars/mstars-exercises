@@ -13,6 +13,6 @@ document.getElementById("begin-game").addEventListener('click', () => {
 })
 
 document.addEventListener('keydown', function(event){
-    console.log(event.key);
+    
     game.handleKeyDown(event);
 })

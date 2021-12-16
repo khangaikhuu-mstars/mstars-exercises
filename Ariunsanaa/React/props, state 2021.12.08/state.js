@@ -1,26 +1,5 @@
-const players = [
-    {
-      name: "Ariunsanaa",
-      score: 0,
-      id: 1,
-    },
-    {
-      name: "Enkhtuvshin",
-      score: 0,
-      id: 2,
-    },
-    {
-      name: "Baatarkhuu",
-      score: 0,
-      id: 3,
-    },
-    {
-      name: "Amarsanaa",
-      score: 0,
-      id: 4,
-    },
-  ];
-  
+
+      
   class Header extends React.Component {
       render() {
       return (
@@ -38,7 +17,9 @@ const players = [
       render() {
       return (
         <div className="player">
-          <span className="player-name">{this.props.playerName}</span>
+          <span className="player-name">
+          <button className="remove-player" onClick={()=> this.props.removePlayer(this.props.id)}> X </button>
+            {this.props.playerName}</span>
           <Counter score={this.props.score} />
         </div>
       );
@@ -71,16 +52,48 @@ const players = [
   }
   
   class App extends React.Component {
+
+    state = {
+      players: [
+      {
+        name: "Ariunsanaa",
+        score: 0,
+        id: 1,
+      },
+      {
+        name: "Enkhtuvshin",
+        score: 0,
+        id: 2,
+      },
+      {
+        name: "Baatarkhuu",
+        score: 0,
+        id: 3,
+      },
+      {
+        name: "Amarsanaa",
+        score: 0,
+        id: 4,
+      },
+    ]
+  }
+
+  handleRemovePlayer = (id) => {
+    this.setState(data => ({
+      players: data.players.filter(f => f.id !== id)
+    }))
+  }
       render() {
       return (
         <div className="scoreboard">
           <Header title="Scoreboard" totalPlayers={1} />
-          {this.props.initialPlayers.map((player) => (
+          {this.state.players.map((player) => (
             <Player
               playerName={player.name}
               score={player.score}
               key={player.id.toString()}
-            />
+              id = {player.id}
+              removePlayer = {this.handleRemovePlayer}/>
           ))}
         </div>
       );
@@ -88,6 +101,6 @@ const players = [
   }
   
   ReactDOM.render(
-    <App initialPlayers={players} />,
+    <App />,
     document.getElementById("root")
   );
