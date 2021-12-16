@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Player from './Player';
 import AddPlayerForm from './AddPlayerForm';
+import { Provider } from './Context';
 
 class App extends Component {
   state = {
@@ -76,10 +77,17 @@ class App extends Component {
 
   render() {
     return (
+      <Provider value={{
+        players: this.state.players,
+        actions: {
+          changeScore: this.handleScoreChange ,
+          removePlayer: this.handleRemovePlayer ,
+          addPlayer: this.handleAddPlayer ,
+        }
+      }}>
       <div className="scoreboard">
         <Header 
           title="Scoreboard" 
-          players={this.state.players} 
         />
   
         {/* Players list */}
@@ -89,14 +97,12 @@ class App extends Component {
             score={player.score}
             id={player.id}
             key={player.id.toString()} 
-            index={index}
-            changeScore={this.handleScoreChange}
-            removePlayer={this.handleRemovePlayer}           
+            index={index}          
           />
         )}
-
-        <AddPlayerForm addPlayer={this.handleAddPlayer} />
+        <AddPlayerForm/>
       </div>
+      </Provider>
     );
   }
 }
