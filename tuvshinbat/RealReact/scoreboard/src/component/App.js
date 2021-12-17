@@ -89,28 +89,42 @@ import AddPlayerForm from './AddPlayerForm';
 class App extends React.Component{
 
     state = {
-        players : [{id: 1, name: "Baynaa", score : 0},
-                    {id: 2,name: "Buynaa", score : 0},
-                    {id: 3 , name: "Temka", score: 0},
-                    {id: 4, name: "Boldko", score: 0} ,
-                    {id: 5, name: "Uugnaa", score: 0}  ,
-                    {id: 6, name: "Tuvshinbat", score: 0}         
+        players : [{id: 1, name: "Dorj", score : 0},
+                    {id: 2,name: "Dolgor", score : 0},
+                    {id: 3 , name: "Dulmaa", score: 0},
+                    {id: 4, name: "Dondog", score: 0}        
                     ]
                 }
                 
-    prevPlayerId = 6;
+prevPlayerId = 5;
+
+
+    orderScore =()=>{
+        let scores = this.state.players.map(player => parseInt(player.score))
+        console.log(scores)
+        scores = scores.sort(function (a, b) { return a - b; }).reverse()
+        console.log(scores)
+        console.log(scores.slice(0,3))
+        
+        console.log(typeof scores.slice(0,3)[0])
+        return scores.slice(0,3)
+        
+    }
+
+
 
     handleRemovePlayer = (id)=>{
+        
         this.setState(data =>    
             ({  
                 players: data.players.filter(f => {
-                    console.log(f)
                     return f.id !== id})
             })    
         )
     }
 
     handleScoreChange = (index, num)=>{
+     
         //console.log("index:" + index + " num:"+ num)
 
         this.setState(prevState =>{
@@ -126,7 +140,6 @@ class App extends React.Component{
                 players : updatedPlayers
             };
         });
-        
     }
 
     handleAddPleyer = (name) => {
@@ -141,20 +154,26 @@ class App extends React.Component{
             ]
         })
     }
-    getHighScore = () => {
-        const score =  this.state.players.map(p => p.score);
-        const highscore = Math.max(...score);
-           if(highscore  ){
-               return highscore
-           }
-           return null
-        
-    }
 
+    getMedal =(player)=>{
+        const bestThreeScores = this.orderScore()
+        if (!bestThreeScores.includes(player.score)){
+            return null;
+        }else{
+            if(bestThreeScores[0] == player.score){
+                return "gold";
+            }else if(bestThreeScores[1] == player.score){
+                return 'silver';
+            }else{
+                return "bronze";
+        }
+    }
+    console.log(bestThreeScores)
+    console.log(player.score)
+    };
   
 
     render(){
-        const highscore =this.getHighScore()
         return (
             <div className="scoreboard">
                 <Header  totalPlayers ={this.state.players} />
@@ -167,8 +186,7 @@ class App extends React.Component{
                             key={player.id.toString()}
                             removePlayer = {this.handleRemovePlayer}
                             changeScore = {this.handleScoreChange}
-                            isHighScore ={highscore === player.score}
-                            />)
+                            medal = {this.getMedal(player)}/>)
                 })}
 
                 <AddPlayerForm  addPlayer = {this.handleAddPleyer}/>
