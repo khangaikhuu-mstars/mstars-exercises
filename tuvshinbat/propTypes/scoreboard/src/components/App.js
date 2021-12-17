@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Player from './Player';
 import AddPlayerForm from './AddPlayerForm';
+import { Provider } from './context';
 
 class App extends Component {
   state = {
@@ -76,7 +77,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className="scoreboard">
+      <Provider value={{
+        players: this.state.players,
+        actions: {
+          changeScore: this.handleScoreChange,
+          removePlayer: this.handleRemovePlayer,
+          addPlayer: this.handleAddPlayer
+        }
+      }}>
+     <div className="scoreboard">
+      
         <Header 
          
           players={this.state.players} 
@@ -93,10 +103,11 @@ class App extends Component {
             changeScore={this.handleScoreChange}
             removePlayer={this.handleRemovePlayer}           
           />
-        )}
+          )}
 
         <AddPlayerForm addPlayer={this.handleAddPlayer} />
       </div>
+          </Provider>
     );
   }
 }
