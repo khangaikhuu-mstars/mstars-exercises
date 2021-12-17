@@ -16,7 +16,8 @@ render(){
             <Crown isHighScore = {this.props.isHighScore}/>
               
                 {this.props.playerName}</span>
-            <Counter score = {this.props.score} changeScore = {this.props.changeScore}
+            <Counter score = {this.props.score}
+             changeScore = {this.props.changeScore}
                 index = {this.props.index}
             />
         </div>
