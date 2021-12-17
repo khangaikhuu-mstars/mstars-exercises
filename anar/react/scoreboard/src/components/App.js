@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Player from './Player';
 import AddPlayerForm from './AddPlayerForm';
+import { Provider } from './context';
 
 class App extends Component {
   state = {
@@ -76,27 +77,38 @@ class App extends Component {
 
   render() {
     return (
-      <div className="scoreboard">
-        <Header
-          // title="HighScore board" 
-          players={this.state.players}
-        />
-
-        {/* Players list */}
-        {this.state.players.map((player, index) =>
-          <Player
-            name={player.name}
-            score={player.score}
-            id={player.id}
-            key={player.id.toString()}
-            index={index}
-            changeScore={this.handleScoreChange}
-            removePlayer={this.handleRemovePlayer}
+      <Provider value={
+        {
+          players: this.state.players,
+          actions: {
+            changeScore: this.handleScoreChange,
+            addPlayer: this.handleAddPlayer,
+            removePlayer: this.handleRemovePlayer,
+          },
+          // score: this.state.players.score,
+          index: this.state.players.index
+        }
+      }>
+        <div className="scoreboard">
+          <Header
+            title="Score Board"
           />
-        )}
 
-        <AddPlayerForm addPlayer={this.handleAddPlayer} />
-      </div>
+          {/* Players list */}
+          {this.state.players.map((player, index) =>
+            <Player
+              name={player.name}
+              score={player.score}
+              id={player.id}
+              key={player.id.toString()}
+              index={index}
+              changeScore={this.handleScoreChange}
+            />
+          )}
+
+          <AddPlayerForm addPlayer={this.handleAddPlayer} />
+        </div>
+      </Provider>
     );
   }
 }

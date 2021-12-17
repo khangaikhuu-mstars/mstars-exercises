@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Player from './Player';
 import AddPlayerForm from './AddPlayerForm';
+<<<<<<< HEAD
+=======
+import { Provider } from './Context';
+>>>>>>> 85d14a3aa4f04b662e91059723db15658e405142
 
 class App extends Component {
   state = {
@@ -76,6 +80,7 @@ class App extends Component {
 
   render() {
     return (
+<<<<<<< HEAD
       <div className="scoreboard">
         <Header 
           //title="Scoreboard" 
@@ -85,11 +90,31 @@ class App extends Component {
         {/* Players list */}
         {this.state.players.map( (player, index) =>
           <Player 
+=======
+      <Provider value={{
+        players: this.state.players,
+        actions:{
+          changeScore: this.handleScoreChange,
+          removePlayer: this.handleRemovePlayer,
+          addPlayer: this.handleAddPlayer
+        }
+      }}>
+        <div className="scoreboard">
+          <Header 
+            title="Scoreboard" 
+         
+            />
+    
+          {/* Players list */}
+          {this.state.players.map( (player, index) =>
+            <Player 
+>>>>>>> 85d14a3aa4f04b662e91059723db15658e405142
             name={player.name}
             score={player.score}
             id={player.id}
             key={player.id.toString()} 
             index={index}
+<<<<<<< HEAD
             changeScore={this.handleScoreChange}
             removePlayer={this.handleRemovePlayer}           
           />
@@ -97,6 +122,16 @@ class App extends Component {
 
         <AddPlayerForm addPlayer={this.handleAddPlayer} />
       </div>
+=======
+            // changeScore={this.handleScoreChange}
+            removePlayer={this.handleRemovePlayer}           
+            />
+            )}
+
+          <AddPlayerForm addPlayer={this.handleAddPlayer} />
+        </div>
+    </Provider>
+>>>>>>> 85d14a3aa4f04b662e91059723db15658e405142
     );
   }
 }

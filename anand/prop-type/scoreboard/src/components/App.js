@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Player from './Player';
 import AddPlayerForm from './AddPlayerForm';
-
+import { Provider } from './context';
 class App extends Component {
   state = {
     players: [
@@ -76,9 +76,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="scoreboard">
+      <Provider value={{
+        players: this.state.players,
+        actions: {
+          changeScore: this.handleScoreChange,
+          remlayer: this.handleRemovePlayer,
+          addPlayer: this.handleAddPlayer
+        }
+      }}>
+           <div className="scoreboard">
         <Header 
-          players={this.state.players} 
+          title="Scoreboard" 
         />
   
         {/* Players list */}
@@ -89,13 +97,13 @@ class App extends Component {
             id={player.id}
             key={player.id.toString()} 
             index={index}
-            changeScore={this.handleScoreChange}
             removePlayer={this.handleRemovePlayer}           
           />
         )}
 
         <AddPlayerForm addPlayer={this.handleAddPlayer} />
       </div>
+      </Provider>
     );
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+<<<<<<< HEAD
 
 const Counter = ({ index, score, changeScore }) => {
   return (
@@ -10,11 +11,37 @@ const Counter = ({ index, score, changeScore }) => {
     </div>
   );
 }
+=======
+import { Consumer } from './Context';
+
+const Counter = ({ index, score }) => {
+return(
+  <Consumer>
+    {context =>{
+      return (
+        <div className="counter">
+          <button className="counter-action decrement" onClick={() => context.actions.changeScore(index, -1)}> - </button>
+          <span className="counter-score">{ score }</span>
+          <button className="counter-action increment" onClick={() => context.actions.changeScore(index, 1)}> + </button>
+        </div>
+      );
+    }
+
+    }
+
+  </Consumer>
+        
+)
+}      
+>>>>>>> 85d14a3aa4f04b662e91059723db15658e405142
 
 Counter.propTypes = {
   index: PropTypes.number,
   score: PropTypes.number,
+<<<<<<< HEAD
   changeScore: PropTypes.func,
+=======
+>>>>>>> 85d14a3aa4f04b662e91059723db15658e405142
 }
 
 export default Counter;
