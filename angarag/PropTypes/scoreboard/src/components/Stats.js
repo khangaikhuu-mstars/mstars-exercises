@@ -1,43 +1,35 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import PropTypes from 'prop-types'
-import { Consumer } from './context';
 
-const Stats = () => {
-
+const Stats = (props) => {
+ 
+  const totalPlayers = props.players.length;
+  const totalPoints = props.players.reduce( (total, player) => {
+    return total + player.score;
+  }, 0);
 
   return (
-    <Consumer>
-      {context => {
-        const totalPlayers = context.player.length;
-        const totalPoints = context.player.reduce((total, player) => {
-          return total + player.score;
-        }, 0);
-
-        return (
-          <table className="stats">
-            <tbody>
-              <tr>
-                <td>Players:</td>
-                <td>{totalPlayers}</td>
-              </tr>
-              <tr>
-                <td>Total Points:</td>
-                <td>{totalPoints}</td>
-              </tr>
-            </tbody>
-          </table>
-        );
-      }}
-    </Consumer>
-  )
-
+    <table className="stats">
+      <tbody>
+        <tr>
+          <td>Players:</td>
+          <td>{ totalPlayers }</td>
+        </tr>
+        <tr>
+          <td>Total Points:</td>
+          <td>{ totalPoints }</td>
+        </tr>
+      </tbody>
+    </table>
+  );
 }
-Stats.propTypes = {
+
+Stats.propTypes = { 
   props: PropTypes.shape({
-    player: PropTypes.arrayOf(PropTypes.objectOf({
-      socre: PropTypes.number.isRequired
-    })),
+    players: PropTypes.arrayOf(PropTypes.objectOf({
+      score: PropTypes.number.isRequired
+    }))
   })
 }
 
