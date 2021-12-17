@@ -11,6 +11,7 @@ const Stats = () => {
         const totalPoints = context.players.reduce((total, player) => {
           return total + player.score;
         }, 0);
+        const highScore = context.highScore;
         return (
           <table className="stats">
             <tbody>
@@ -21,6 +22,10 @@ const Stats = () => {
               <tr>
                 <td>Total Points:</td>
                 <td>{totalPoints}</td>
+              </tr>
+              <tr>
+                <td>Highest Point:</td>
+                <td>{highScore}</td>
               </tr>
             </tbody>
           </table>
