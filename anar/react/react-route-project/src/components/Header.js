@@ -7,6 +7,7 @@ const Header = () => (
       <li><NavLink exact to="/" activeStyle={{ background: 'tomato'}}>Home</NavLink></li>
       <li><NavLink to="/about" activeClassName='actyMcActiveFace'>About</NavLink></li>
       <li><NavLink to="/teachers">Teacher</NavLink></li>
+      <li><NavLink to="/students">Student</NavLink></li>
       <li><NavLink to="/courses">Courses</NavLink></li>
     </ul>    
   </header>
