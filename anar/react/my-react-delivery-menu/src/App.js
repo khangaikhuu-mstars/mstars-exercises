@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 
 import Header from './Header'
@@ -15,8 +15,8 @@ function App() {
                 <Route path="/" component={Header} />
 
                 <Route exact path={'/'} component={Home} />
-                <Route path={'/items/orders'} component={Orders} /> 
-                <Route path={'/items/delivery'} component={Delivery} />
+                <Route path={'/orders'} component={Orders} /> 
+                <Route path={'/delivery'} component={Delivery} />
                 
             </Container>
         </BrowserRouter>
