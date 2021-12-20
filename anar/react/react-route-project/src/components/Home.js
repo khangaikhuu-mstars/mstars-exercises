@@ -26,9 +26,6 @@ class Home extends Component {
             <input type={'text'} placeholder='Topic' ref={(input) => this.topic = input}></input>
             <button type={'submit'}>Go!</button>
         </form>
-
-        {/* <Link to='/teachers/Javascript/Khangaikhuu'>Khangaikhuu</Link> */}
-
       </div>
     );
   }

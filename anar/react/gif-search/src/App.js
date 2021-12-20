@@ -17,7 +17,7 @@ export default class App extends Component {
     this.performSearch();
   }
 
-  performSearch = (query = 'cats') => {
+  performSearch = (query = 'jack nicholson') => {
     const apiKey = '6RtkCtaWlnmsFeZ9P0pPD8U524A2E4vQ';
     const axios = require('axios');
     console.log(query);
