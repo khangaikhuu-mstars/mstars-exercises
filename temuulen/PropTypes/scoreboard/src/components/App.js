@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Player from './Player';
 import AddPlayerForm from './AddPlayerForm';
+<<<<<<< HEAD
+=======
 import { Provider } from './Context';
+>>>>>>> 85d14a3aa4f04b662e91059723db15658e405142
 
 class App extends Component {
   state = {
@@ -34,9 +37,15 @@ class App extends Component {
   prevPlayerId = 4;
 
   handleScoreChange = (index, delta) => {
+<<<<<<< HEAD
+    this.setState( prevState => {
+      // New 'players' array – a copy of the previous `players` state
+      const updatedPlayers = [ ...prevState.players ];
+=======
     this.setState(prevState => {
       // New 'players' array – a copy of the previous `players` state
       const updatedPlayers = [...prevState.players];
+>>>>>>> 85d14a3aa4f04b662e91059723db15658e405142
       // A copy of the player object we're targeting
       const updatedPlayer = { ...updatedPlayers[index] };
 
@@ -53,7 +62,11 @@ class App extends Component {
   }
 
   handleAddPlayer = (name) => {
+<<<<<<< HEAD
+    this.setState( prevState => {
+=======
     this.setState(prevState => {
+>>>>>>> 85d14a3aa4f04b662e91059723db15658e405142
       return {
         players: [
           ...prevState.players,
@@ -68,7 +81,11 @@ class App extends Component {
   }
 
   handleRemovePlayer = (id) => {
+<<<<<<< HEAD
+    this.setState( prevState => {
+=======
     this.setState(prevState => {
+>>>>>>> 85d14a3aa4f04b662e91059723db15658e405142
       return {
         players: prevState.players.filter(p => p.id !== id)
       };
@@ -77,6 +94,29 @@ class App extends Component {
 
   render() {
     return (
+<<<<<<< HEAD
+      <div className="scoreboard">
+        <Header 
+          // title="highScoreboard" 
+          players={this.state.players} 
+        />
+  
+        {/* Players list */}
+        {this.state.players.map( (player, index) =>
+          <Player 
+            name={player.name}
+            score={player.score}
+            id={player.id}
+            key={player.id.toString()} 
+            index={index}
+            changeScore={this.handleScoreChange}
+            removePlayer={this.handleRemovePlayer}           
+          />
+        )}
+
+        <AddPlayerForm addPlayer={this.handleAddPlayer} />
+      </div>
+=======
       <Provider value={{
         players: this.state.players,
         actions: {
@@ -104,6 +144,7 @@ class App extends Component {
           <AddPlayerForm />
         </div>
       </Provider>
+>>>>>>> 85d14a3aa4f04b662e91059723db15658e405142
     );
   }
 }

@@ -17,7 +17,7 @@ class AddPlayerForm extends Component {
             e.currentTarget.reset();
           }
           return (
-            <form onSubmit={context.actions.handleSubmit}>
+            <form onSubmit={context.handleSubmit}>
               <input 
                 type="text"
                 ref={this.playerInput}
