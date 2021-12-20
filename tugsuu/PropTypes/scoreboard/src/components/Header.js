@@ -3,19 +3,17 @@ import Stats from './Stats';
 import Stopwatch from './Stopwatch';
 import Proptypes from 'prop-types';
 
-const Header = ({ players, title }) => {
+const Header = ({title }) => {
   return (
     <header>
-      <Stats players={players} />
+      <Stats/>
       <h1>{ title }</h1>
       <Stopwatch />
     </header>
   );
 }
-
 Header.propTypes = {
   title: Proptypes.string,
-  players: Proptypes.arrayOf(Proptypes.object)
 }
 Header.defaultProps = {
   title: 'Scoreboard'
