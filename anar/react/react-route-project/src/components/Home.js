@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 class Home extends Component {
 
+  handleSubmit = (e) => {
+    e.preventDeafult();
+    let teacherName = this.name.value;
+    let teacherTopic = this.topic.value;
+    let path  = `teachers/${teacherTopic}/${teacherName}`;
+    this.props.history.push(path);
+  }
 
   render() {
+
+
     return (
       <div className="main-content home">
         <h2>Front End Course Directory</h2>
@@ -13,13 +21,10 @@ class Home extends Component {
         <p>We have thousands of videos created by expert teachers on web design and front end development. Our library is continually refreshed with the latest on web technology so you will never fall behind.</p>
         <hr />
         <h3>Featured Teachers</h3>
-
-        <form>
-          <input value={''}></input>
-          <label>Topic </label>
-          <input value={''}></input>
-          <label>Name </label>
-          <input type={'submit'}></input>
+        <form onSubmit={this.handleSubmit}>
+            <input type={'text'} placeholder='Name' ref={(input) => this.name = input}></input>
+            <input type={'text'} placeholder='Topic' ref={(input) => this.topic = input}></input>
+            <button type={'submit'}>Go!</button>
         </form>
 
         {/* <Link to='/teachers/Javascript/Khangaikhuu'>Khangaikhuu</Link> */}
