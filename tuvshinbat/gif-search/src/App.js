@@ -36,6 +36,7 @@ export default class App extends Component {
 
     //   })
       //3 performSearch eer
+      console.log('performsearch')
       this.performSearch()
   }
 
@@ -52,6 +53,7 @@ export default class App extends Component {
       });
   }
   render() {
+    console.log('renderLive')
     return (
       <div>
         <div className="main-header">
