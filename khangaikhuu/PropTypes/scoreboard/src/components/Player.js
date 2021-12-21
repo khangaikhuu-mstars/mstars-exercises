@@ -8,8 +8,7 @@ class Player extends PureComponent {
     id: PropTypes.number.isRequired,
     score: PropTypes.number.isRequired,
     index: PropTypes.number.isRequired,
-    removePlayer: PropTypes.func.isRequired,
-    changeScore: PropTypes.func.isRequired
+    removePlayer: PropTypes.func.isRequired
   }
   render() {
     
@@ -18,8 +17,7 @@ class Player extends PureComponent {
       id,
       score,
       index,
-      removePlayer,
-      changeScore
+      removePlayer
     } = this.props;
 
     return (
@@ -32,7 +30,6 @@ class Player extends PureComponent {
         <Counter 
           score={score}
           index={index}
-          changeScore={changeScore} 
         />
       </div>
     );
