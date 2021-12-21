@@ -1,16 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import './App.css';
 import SearchForm from './Components/SearchForm';
 import GifList from './Components/GifList';
 
 export default class App extends Component {
   
-  constructor() {
-    super();
-    this.state={
-      gifs: []
-    }
-  } 
+  // constructor() {
+  //   super();
+  //   this.state={
+  //     gifs: []
+  //   }
+  // } 
+  function App (){
+    const 
+  }
 
   componentDidMount(){
     const axios = require('axios');
