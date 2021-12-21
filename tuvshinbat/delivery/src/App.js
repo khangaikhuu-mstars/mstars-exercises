@@ -2,7 +2,7 @@
 import './App.css';
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Route, Switch, NavLink} from 'react-router-dom';
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import Home from './Home'
 import Delivery from './Delivery';
 import Action from './Action';

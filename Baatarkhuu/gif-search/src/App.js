@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import SearchForm from './Components/SearchForm';
 import GifList from './Components/GifList';
-import axios from 'axios';
 
 export default class App extends Component {
   
@@ -67,7 +66,7 @@ export default class App extends Component {
           </div>   
         </div>    
         <div className="main-content">
-          <GifList i={this.state.gifs}/>
+          <GifList data={this.state.gifs}/>
         </div>
       </div>
     );
