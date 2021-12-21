@@ -7,6 +7,11 @@ function App() {
   const [message, setMessage] = useState('Welcome!');
   
   
+  function handReset(){
+      setScore(0);
+      setMessage("Reset")
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -14,10 +19,10 @@ function App() {
         <button onClick ={()=> setScore(score +1)}>
           Increase Score
         </button>
-        <button onClick ={()=> {setScore(prevScore => prevScore - 1); setMessage("Go!")}}>
+        <button onClick ={()=> {setScore(prevScore => prevScore - 1); setMessage("Descreased!")}}>
           Decrease Score
         </button>
-        <button onClick ={()=> {setScore(0); setMessage("Reset!")}}>
+        <button onClick ={()=> handReset}>
           Reset
         </button>
 
