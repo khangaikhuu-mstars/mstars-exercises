@@ -78,6 +78,8 @@ class App extends Component {
 
 
   render() {
+<<<<<<< HEAD
+=======
 
     const highScore = this.state.players.reduce((max, player) => {
       if (max < player.score) {
@@ -86,6 +88,7 @@ class App extends Component {
       return max
     }, -99999999);
 
+>>>>>>> 6ee0dd4d7d64c5444294cbc9429cf6c8ebb99b02
     return (
       <Provider value={
         {
@@ -95,7 +98,11 @@ class App extends Component {
             addPlayer: this.handleAddPlayer,
             removePlayer: this.handleRemovePlayer,
           },
+<<<<<<< HEAD
+          // score: this.state.players.score,
+=======
           highScore: highScore,
+>>>>>>> 6ee0dd4d7d64c5444294cbc9429cf6c8ebb99b02
           index: this.state.players.index
         }
       }>
