@@ -1,20 +1,36 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-export default class SearchForm extends Component {
+function SearchForm(props) {
+  const [searchText, setSearchText] = useState('')
   
-  state = {
-    searchText: ''
-  }
-  
-  onSearchChange = e => {
-    this.setState({ searchText: e.target.value });
-  }
-  
-  handleSubmit = e => {
+  const onSearchChange = (e) => { 
+    // Update state 
+    setSearchText(e.target.value)
+  };
+
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    this.props.onSearch(this.query.value)
+    props.onSearch(searchText);
     e.currentTarget.reset();
   }
+<<<<<<< HEAD:temuulen/gif-search/src/Components/SearchForm.js
+
+  return (
+    <form className="search-form" onSubmit={handleSubmit}>
+      <label className="is-hidden" htmlFor="search">Search</label>
+      <input type="search"
+        onChange={onSearchChange}
+        name="search"
+        placeholder="Search..."
+      />
+      <button type="submit" id="submit" className="search-button"><i className="material-icons icn-search">search</i></button>
+    </form>
+  );
+}
+
+export default SearchForm;
+=======
   
   render() {  
     return (
@@ -30,3 +46,4 @@ export default class SearchForm extends Component {
     );
   }
 }
+>>>>>>> 0f7121fa5b5049eb267631d8465034414fffa925:Tserendorj/giphy/src/Components/SearchForm.js
