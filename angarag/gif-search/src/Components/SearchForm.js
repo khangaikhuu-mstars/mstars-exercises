@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class SearchForm extends Component {
   state = {
-    searchText: "",
+    searchText: ""
   };
 
   onSearchChange = (e) => {
@@ -11,11 +11,11 @@ export default class SearchForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.onSearch(this.query.value)
+    this.props.onSearch(this.query.value);
     e.currentTarget.reset();
   };
- 
 
+ 
   render() {
     return (
       <form className="search-form" onSubmit={this.handleSubmit}>

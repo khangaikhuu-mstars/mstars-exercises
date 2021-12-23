@@ -1,0 +1,33 @@
+/* ================================= 
+  WEB FONTS
+==================================== */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
+
+/* ================================= 
+  ELEMENT STYLES
+==================================== */
+
+* {
+  box-sizing: border-box;
+}
+body {
+  color: #576366;
+  background: #5fcf80;
+
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.card-container{
+  align-items: center;
+  margin: auto;
+}
+.card-list{
+  display: flex;
+  flex-direction: column;
+}
+.center{
+  align-items: center;
+  margin-left: 40%;
+}
