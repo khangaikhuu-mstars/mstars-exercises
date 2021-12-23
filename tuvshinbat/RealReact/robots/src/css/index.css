@@ -31,3 +31,15 @@ body {
   align-items: center;
   margin-left: 40%;
 }
+.search-box{
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid gray;
+  padding: 10px;
+  width: 200px;
+  line-height: 30px;
+  margin-left: 40%;
+  
+
+
+}
