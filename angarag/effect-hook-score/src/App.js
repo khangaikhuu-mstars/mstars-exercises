@@ -4,7 +4,9 @@ import "./App.css";
 function App() {
   const [score, setScore] = useState(0);
   const [message] = useState("Welcome!");
-  useEffect(() => {document.title = `${message} Your score is ${score}`}, [message, score]);
+  useEffect(() => {
+    document.title = `${message} Your score is ${score}`;
+  }, [message, score]);
 
   return (
     <div className="App">
