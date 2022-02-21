@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+$blue-color: #2d76f9;
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar {
+    width: 100px;
+
+    .navbar-body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .navbar-menu {
+            .nav-items {
+                display: flex;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                .nav-item {
+                    padding: 0;
+
+                    &.nav-items li.active a {
+                        padding: 0 1rem;
+                        color: red;
+                    }
+
+                    .nav-item li a {
+                        color: $blue-color;
+                    }
+
+                }
+            }
+        }
+
+    }
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    color: #2d76f9;
+    font-weight: 700;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+}
+
+.btn-primary {
+    background-color: $blue-color;
+}
+$sizes: 40px, 50px, 80px;
+
+@each $size in $sizes {
+  .icon-#{$size} {
+    font-size: $size;
+    height: $size;
+    width: $size;
+  }
+}
+$cols: 1,2,3,4,5,6,7,8,9,10,11,12;
+@each $col in $cols {
+    .col-#{$col}{
+
+       width: (100%/12)*$col;
+    }
+}
+$numbers:5,10,15,20,25,30,35,40,45,50;
+$margins: ("top","bottom","left","right");
+@each $number in $numbers{
+    @each $margin in $margins{
+        .m#{str-slice(#{$margin}, 0, 1)}-#{$number}{
+            margin-#{$margin}:$number+px ;
+         }
+    }
+
+}
