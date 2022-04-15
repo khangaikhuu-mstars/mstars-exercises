@@ -1,14 +1,20 @@
 import React, {Component} from 'react';
 import {Cardlist} from "./Cardlist"
+import { Search } from './Search';
 // import {Card} from "./Card"
 export default class App extends Component {
   constructor(){
     super();
     this.state ={
       robots : [],
+      searchField: " ",
     }
     
   };
+  onSearchChanged = event => {
+    this.setState({searchField: event.target.value})
+    console.log('---', event.target.value);
+  }
   componentDidMount(){
     fetch("https://jsonplaceholder.typicode.com/users")
   .then( response => response.json())
@@ -21,12 +27,15 @@ export default class App extends Component {
 
   
   render(){
-    console.log(this.state.robots)
+   const {robots, searchField} = this.state;
+   const filteredRobots =robots.filter(el => el.name.toLowerCase().includes(searchField))
+
+
     return(
       <div className='App'>
               <h1 className='center'>robot search</h1>
-              
-               <Cardlist robots={this.state.robots}/>
+              <Search onSearch={this.onSearchChanged} />
+               <Cardlist robots={filteredRobots}/>
       </div>
     )
   }
