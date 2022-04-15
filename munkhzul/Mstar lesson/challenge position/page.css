@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+  }
+  html {
+    font-size: 20px;  
+  }
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  header {
+    background-color: #294969;
+    color: ghostwhite;
+    padding: 1vh 1em;
+  }
+  h2 {
+    margin-top: 0;
+  }
+  section {
+    background-color: azure;
+    padding: 1rem;
+  }
+  .intro {
+    margin: 0 auto;
+    background-color: papayawhip;
+  }
+  footer {
+    padding: 1em;
+  }

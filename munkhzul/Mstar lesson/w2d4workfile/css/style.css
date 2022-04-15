@@ -1,0 +1,115 @@
+.main-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* justify-content: space-between; */
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+.item-clone {
+    margin-left: 60px;
+    color: #f58a07;
+    background-color: #e9dbc9;
+    border-radius: 40px;
+    width: 180px;
+    height: 50px;
+    box-sizing: border-box;
+}
+.wrapper {
+    max-width: 1280px;
+}
+.banner {
+    display: relative;
+    background-color: #edf7ff;
+    /* justify-content: center; */
+    min-height: 60vh;
+    margin-right: 0;
+    /* flex-basis: 500px; */
+    align-items: center;
+}
+.image {
+    padding: 15px;
+    justify-content: center;
+}
+.prosper {
+    min-width: 50%;
+    /* display: inline; */
+    margin-left: 10%;
+    /* margin-right: 10%; */
+}
+.prosper .banner p {
+    padding: auto;
+    margin: 0;
+}
+.header-image {
+    display: absolute;
+    margin-right: 0;
+}
+.prosper p {
+    margin: 40px 0;
+    color: #5b5b5b;
+    line-height: 30px;
+}
+/* .pro {
+    margin: 0;
+} */
+.see {
+    padding: 20px;
+    /* width: 300px; */
+    margin-left: 0;
+}
+.see:hover {
+    background-color: #f58a07;
+    border-radius: 40px;
+    color: white;
+}
+.first {
+    border: 2px solid red;
+    min-width: 60%;
+    /* margin-left: 10%; */
+}
+.first-section {
+    display: flex;
+    border: 2px solid black;
+    padding: 20px;
+    flex-direction: row;
+    /* align-items: center; */
+    box-sizing: border-box;
+}
+section img {
+    border-radius: 60px;
+    padding: 30px;
+}
+.banner1 {
+    display: flex;
+    flex-direction: column;
+    background-color: #edf7ff;
+    min-height: 60vh;
+    align-items: center;
+}
+.weAre {
+    border: 2px solid black;
+    display: flex;
+    color: #5b5b5b;
+}
+.itemsuud {
+    display: flex;
+    align-items: center;
+}
+.items {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    /* min-width: 25%; */
+    align-self: center;
+    margin: 20px;
+    /* margin-left: 10%;
+    margin-right: 10%; */
+}

@@ -1,0 +1,13 @@
+/* Challenge style goes here */
+.card {
+    position: relative;
+    top: 80px;
+}
+.logo {
+    position: absolute;
+    top: -45px;
+    left: 20px;
+}
+.banner,.logo{
+    position: sticky;
+}

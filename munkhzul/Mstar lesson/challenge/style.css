@@ -1,0 +1,79 @@
+/* Challenge style goes here */
+.heading {
+    font-size: 3rem;
+}
+section h2 {
+    font-size: 32px;
+}
+header {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lightblue;
+    border: 29px solid rgb(45, 100, 136);
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+header h1 {
+    margin-left: 10%;
+}
+header address p {
+    margin-left: 30%;
+}
+img {
+    width: 100%;
+}
+section {
+    border: 2px solid rgb(54, 155, 168);
+    /* margin-top: 10px;
+    display: inline-block;
+    float: left;
+    height: 330px;
+    margin-left: 5px; */
+    min-height: 350px;
+}
+#education, #experience {
+    margin-top: 10px;
+    margin-right: 20px;
+    box-sizing: border-box;
+    width: calc(50% - 10px);
+    display: inline-block;
+}
+#experience {
+    margin-right: 0;
+}
+#education {
+    float: left;
+}
+#skills, #awards {
+    margin-top: 10px;
+    margin-right: 20px;
+    box-sizing: border-box;
+    width: calc(50% - 10px);
+    display: inline-block;
+}
+#awards {
+    margin-right: 0;
+}
+#skills {
+    float: left;
+}
+.news {
+    border: 2px solid rgb(45, 100, 136);
+    margin-top: 30px;
+    margin-right: 5px;
+    box-sizing: border-box;
+    display: inline-block;
+    width: calc(25% - 10px);
+}
+.news:last-child {
+    margin-right: 0;
+}
+section:hover {
+    background-color: rgb(187, 233, 218);
+    border-radius: 30px;
+}
+img:hover {
+    border-radius: 100px;
+    grid-auto-rows: auto;
+}
