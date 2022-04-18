@@ -1,0 +1,208 @@
+/* Web Fonts ----------------------- */
+
+  
+  /* Base Styles --------------------- */
+  body {
+    font-family: 'Dancing Script', cursive;
+    margin: 0;
+    background-image: radial-gradient(rgba(211, 203, 203, .4), rgba(218, 209, 209, 0.8)), url(/img/un.jpg);
+    /* background-color: #FF8370;  */
+  }
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    font-size: 1.25em; /* 20px on most screens */
+    min-height: 100vh;
+  }
+  h1, h2 {
+    /* font declaration */
+    color: white;
+    text-shadow: 5px 5px 5px black;
+    text-align: center;
+  }
+  h1 {
+    font-size: 3.5rem;
+    margin-top: 120px;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  p {
+    color: white;
+  }
+  img {
+    max-width: 100%; /* responsive images */
+    border-radius: 25px;
+  }
+
+  /* Main Styles --------------------- */
+  header span.title {
+    font-weight: 500;
+    font-size: 25px;
+    color: white;
+  }
+  header::before{
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: rgba(0, 0, 0, .5);
+      z-index: -1;
+  }
+  header {
+    background-image: url(/img/tree.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 50vh;
+    background-position: center;
+    border: 10px solid rgb(185, 106, 70);
+    text-align: center;
+    box-shadow: 5px 5px 20px rgba(158, 60, 14, 0.8);
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 1);
+    padding-top: 30px;
+  }
+  header:hover{
+    background-image: none;
+  }
+  header:hover::before {
+    content: "";
+    background-image: url(/img/mountain-landscape.jpg);
+    background-position: center center;
+    background-size: cover;
+    opacity: .5;
+    z-index: -1;
+  }
+  #bckgrnd {
+    background-image: url(/img/resort.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    top: 0;
+    left: 0;
+    background-origin: border-box;
+    color: white;
+  }
+  #bckgrnd2 {
+    background-image: url(/img/tree.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    z-index: 1;
+    position: relative;
+    background-size: 100%;
+  } 
+  #bckgrnd2:hover:before {
+    content: "";
+    background-image: radial-gradient(circle at center, rgba(24, 23, 23, 0.6), rgba(235, 171, 179, 0.5));
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+  }
+  /* #bckgrnd2:hover {
+    background: none;
+  } */
+  main {
+    text-align: center;
+    margin: 10px auto;
+    max-width: 1000px;
+    border-radius: 30px;
+  }
+  section {
+    background-color: rgba(76, 150, 156, 0.6);
+    margin-top: 10px;
+    border: 3px solid rgb(180, 110, 83);
+    /* font-family: 'Playfair Display', serif; */
+    border-radius: inherit;
+    font-size: 30px;
+    line-height: 2rem;
+    box-shadow: 5px -5px 10px rgba(158, 60, 14, 0.8);
+  }
+  section p::first-letter {
+    font-weight: 900;
+    font-size: 60px;
+  }
+  section a {
+    text-decoration: none;
+    color: white;
+    background-image: linear-gradient(45deg, rgb(77, 156, 150), rgb(168, 133, 93));
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 1);
+  }
+  section a:hover {
+    background-image: linear-gradient(rgb(55, 126, 131), rgb(160, 78, 91));
+    color: rgb(0, 0, 0);
+    box-shadow: 0px 15px 20px rgba(184, 13, 22, .4);
+    font-weight: 600;
+  }
+  #first {
+    float: left;
+    background-image: linear-gradient(to right, rgba(245, 246, 252, 0.52), rgba(223, 216, 200, 0.73)), url('/img/firstimage.jpg');
+    background-size: cover;
+  }
+  section#first, section#second {
+    min-height: 460px;
+  }
+  #first:hover {
+    background-image: linear-gradient(to right, rgba(117, 86, 19, 0.73), rgba(245, 246, 252, 0.52)), url('/img/firstimage.jpg');
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 1);
+  }
+  #first, #second {
+    margin-top: 30px;
+    margin-right: 20px;
+    width: calc(50% - 10px);
+    margin: 0 auto;
+    min-height: 350px;
+  }
+  #second {
+    margin-right: 0;
+    background-image: linear-gradient(to right, rgba(245, 246, 252, 0.52), rgba(117, 86, 19, 0.73)), url('/img/secondimage.jpg');
+    background-size: cover;
+  }
+  #second:hover {
+    background-image: linear-gradient(to right, rgba(117, 86, 19, 0.73), rgba(245, 246, 252, 0.52)), url('/img/secondimage.jpg');
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 1);
+  }
+  #third:hover {
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 1);
+  }
+  footer {
+    /* border: 3px solid black; */
+    background-color: rgb(123, 189, 180);
+    box-shadow: inset 0px 0px 50px rgba(94, 90, 87, 0.8);
+    min-height: 20vh;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    padding: 5px;
+    border-radius: 10px;
+  }
+  footer:hover {
+    box-shadow: -20px -20px 40px rgba(0, 0, 0, 1);
+  }
+  footer a {
+    text-decoration: none;
+    font-size: 30px;
+    color: blueviolet;
+  }
+  footer a:hover {
+    color: white;
+    font-weight: 600;
+    font-size: 50px;
+  }
+
+  /* Media Queries ------------------- */ 

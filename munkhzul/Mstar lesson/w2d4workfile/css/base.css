@@ -1,0 +1,21 @@
+html {
+    font-family: 'Poppins', sans-serif;
+    /* margin-left: 10%;
+    margin-right: 10%; */
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+/* *{
+    box-sizing: border-box;
+} */
+.main-nav a {
+	text-align: center;
+	/* display: block; */
+	padding: 15px 15px;
+}
+h1 {
+    font-size: 50px;
+}

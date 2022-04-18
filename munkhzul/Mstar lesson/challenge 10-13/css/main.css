@@ -1,0 +1,52 @@
+/* body{
+    background-color: floralwhite;
+}
+header{
+    background-color: darkcyan;
+    width: 100%;
+    border-radius: 30px;
+}
+header ul{
+    margin: 0;
+}
+header ul li {
+    display: inline-block;
+    margin: 10px;
+    padding: 20px 0
+}
+section{
+    background-color:lightsteelblue;
+    width: 100%;
+    border-radius: 30px;
+    padding: 50px;
+}
+section article h2{
+    color: darkcyan;
+}
+header nav ul li a{
+    color: darkblue;
+    font-size: 32px;
+}
+footer{
+    position: relative;
+} */
+header{
+    border-style:double;
+}
+section article h2:hover{
+    font-size: 50px;
+    color: #71429c
+}
+section article:hover{
+    background-color: rgb(165, 208, 209);
+}
+header ul li:hover{
+    font-size: 40px;
+}
+article:last-child{
+    border-bottom: 0;
+}
+section article p::first-letter {
+    font-size: 32px;
+    color: darkblue;
+}
